@@ -14,7 +14,7 @@ public interface ProductDAO
 	
 	public List<Product> fetchAllProducts();
 	
-	
+	public String fetchAllProductsJSON();
 	public Product getProductById(int productId);
 
 	public void deleteProduct(int  productId);

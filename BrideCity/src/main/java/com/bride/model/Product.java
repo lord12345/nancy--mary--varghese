@@ -6,6 +6,12 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
+import javax.persistence.Transient;
+import javax.validation.constraints.Min;
+import javax.validation.constraints.NotNull;
+
+import org.hibernate.validator.constraints.NotEmpty;
+import org.springframework.web.multipart.MultipartFile;
 
 
 
@@ -16,11 +22,22 @@ public class Product
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	
+	
+	
     private  int productId;
 	
+	@NotEmpty(message="productName  is  required")
 	private String productName;
+	
+	@NotEmpty(message="productDescription  is  required")
 	private String productDescription;
+	
+	@NotNull(message="productPrice is   required")
+	@Min(value=1,message="Cannot  be   less than 1")
 	private float  productPrice;
+	
+	@NotNull(message="productDiscount is   required")
+	@Min(value=1,message="Cannot  be   less than 1")
 	private float productDiscount;
 	
 	  
@@ -31,6 +48,14 @@ public class Product
 	private int subCategoryId;
 	private int supplierId;
 	private int brandId;
+	          
+	
+	     /*,,,,,,,,,,FOR  IMG  UPLOADING,,,,,,,,,,,,,,,*/
+	
+	
+	
+	@Transient
+	private MultipartFile productImage;
 	
 	
 	@ManyToOne
@@ -55,6 +80,14 @@ public class Product
 
 	public void setProductId(int productId) {
 		this.productId = productId;
+	}
+
+	public MultipartFile getProductImage() {
+		return productImage;
+	}
+
+	public void setProductImage(MultipartFile productImage) {
+		this.productImage = productImage;
 	}
 
 	public String getProductName() {

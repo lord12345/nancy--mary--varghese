@@ -15,22 +15,34 @@
 
 <body>
 <h1>PRODUCT PAGE</h1>
-<form:form modelAttribute="product" action="addProduct">
+  
+                  <!-- ,,,,,,,,,,,PRODUCT  IMAGE  DISPLAY,,,,, -->
+
+<form:form action="addProduct" modelAttribute="product" enctype="multipart/form-data">
+
 
 <form:input path="productId" type="hidden"  placeholder="Add product Id" />
 <form:input path="productName" placeholder="Add product Name" />
+<form:errors path="productName"></form:errors>
 <form:input path="productDescription" placeholder="Add product Description" />
+<form:errors path="productDescription"></form:errors>
 <form:input path="productPrice" placeholder="Add product Price" />
+<form:errors path="productPrice"></form:errors>
 <form:input path="productDiscount" placeholder="Add product Discount" />
-
+<form:errors path="productDiscount"></form:errors>
  
+ 
+             <!-- ,,,,,,,,,,,PRODUCT  IMAGE  DISPLAY,,,,, -->
+           
+ 
+ <form:input type="file" accept=".jpg,.jpeg,.png" path="productImage"/>
+
+
 
 <form:select path="categoryId" items="${categoryList}" itemValue="categoryId" itemLabel="categoryName"/>
 <form:select path="subCategoryId" items="${subCategoryList}" itemValue="subCategoryId" itemLabel="subCategoryName"/>
 <form:select path="brandId" items="${brandList}" itemValue="brandId" itemLabel="brandName"/>
 <form:select path="supplierId" items="${supplierList}" itemValue="supplierId" itemLabel="supplierName"/>
-
-
 
 <input type="Submit" value="Add Product">
 
@@ -45,15 +57,11 @@
 		<th>Product Description</th>
 		<th>Product Price</th>
 		<th>Product Discount</th>
-		
-		
-		
 		<th>Category</th>
 		<th>SubCategory</th>
 		<th>Brand</th>
 		<th>Supplier</th>
-		
-		
+		<th>Product Image</th>
 		<th>Product Edit</th>
 		<th>Product Delete</th>
 	</tr>
@@ -66,19 +74,22 @@
 			<td>${pList.productDescription}</td>
 			<td>${pList.productPrice}</td>
 			<td>${pList.productDiscount}</td>
-			
-			
-			<td>${pList.category.categoryName}</td>
+		    <td>${pList.category.categoryName}</td>
 			<td>${pList.subCategory.subCategoryName}</td>
 			<td>${pList.brand.brandName}</td>
 			<td>${pList.supplier.supplierName}</td>
 			
 			
+			      <!-- ,,,,,,,,,,,PRODUCT  IMAGE  DISPLAY,,,,,,,, -->
+			      
+			<td><img src="resources/data/productImage-${pList.productId}.jpg" height="100px" width="100px" alt="img not uploaded"/></td>
 			
-			
-			
-            <td><a href="editProduct-${pList.productId}">EDIT</a></td>
-			<td><a href="deleteProduct-${pList.productId}">DELETE</a></td> 
+           
+           
+           
+           
+            <td><a href="updateProductById-${pList.productId}">EDIT</a></td>
+			<td><a href="deleteProductById-${pList.productId}">DELETE</a></td> 
 		</tr>
 	</c:forEach>
 

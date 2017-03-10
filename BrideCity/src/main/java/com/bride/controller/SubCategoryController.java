@@ -1,13 +1,16 @@
 package com.bride.controller;
 
+import javax.validation.Valid;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
+import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 
-import com.bride.model.Category;
+
 import com.bride.model.SubCategory;
 import com.bride.service.CategoryService;
 import com.bride.service.SubCategoryService;
@@ -25,8 +28,10 @@ public class SubCategoryController
 	@RequestMapping("/subCategoryPage")
 	public String getSubCategoryPage(Model model)
 	{   
+		      /*    adding   Category
+              displaying category   and   subcategory  list  in   table*/
 		
-
+		
 		model.addAttribute("subCategory",new SubCategory());
 		model.addAttribute("subCategoryList", subCategoryService.fetchAllSubCategories());
 		model.addAttribute("categoryList", categoryService.fetchAllCategories());
@@ -36,8 +41,16 @@ public class SubCategoryController
 	
 	
 	@RequestMapping("/addSubCategory")
-	public String addSubCategory(@ModelAttribute("subCategory") SubCategory subCategory)
+	public String addSubCategory(@Valid @ModelAttribute("subCategory") SubCategory subCategory,BindingResult  result,Model  model)
 	{
+		
+		
+		if(result.hasErrors())
+		{
+			model.addAttribute("categoryList", categoryService.fetchAllCategories());
+			return "subcategories";
+		}
+		
 		
 		subCategoryService.addSubCategory(subCategory);
 		return "redirect:/subCategoryPage";
@@ -45,16 +58,24 @@ public class SubCategoryController
 	
 	
 
-	@RequestMapping("/editSubCategory-{subCategoryId}")
-	public String getSubCategoryById(Model model,SubCategory subCategory, @PathVariable("subCategoryId") int subCategoryId)
+	@RequestMapping("/updateSubCategoryById-{subCategoryId}")
+	public String updateSubCategory(Model model,SubCategory subCategory, @PathVariable("subCategoryId") int subCategoryId)
 	{   
 		
+		                   /*.......updating  current  data.........*/		
+		model.addAttribute("subCategory", subCategoryService.getSubCategoryById(subCategoryId));
+		
+		    
+		                 /* same  as  above*/
+		
+		
+		model.addAttribute("subCategoryList", subCategoryService.fetchAllSubCategories());
 		model.addAttribute("categoryList", categoryService.fetchAllCategories());
 		return "subcategories";
 	}
 	
-	@RequestMapping("/deleteSubCategory-{subCategoryId}")
-	public String deleteSubCategory(Model model,@PathVariable("subCategoryId") int subCategoryId)
+	@RequestMapping("/deleteSubCategoryById-{subCategoryId}")
+	public String deleteSubCategory(@PathVariable("subCategoryId") int subCategoryId)
 	{
 		
 		subCategoryService.deleteSubCategory(subCategoryId);

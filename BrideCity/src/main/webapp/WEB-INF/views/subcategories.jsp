@@ -18,7 +18,11 @@
 
 <form:input path="subCategoryId" type="hidden" placeholder="Add subcategoryId"/>
 <form:input path="subCategoryName" placeholder="Add subcategory Name" />
+
+<form:errors path="subCategoryName"></form:errors>
 <form:input path="subCategoryDescription" placeholder="Add subcategory Description" />
+<form:errors path="subCategoryDescription"></form:errors>
+
  <form:select path="categoryId" items="${categoryList}" itemValue="categoryId" itemLabel="categoryName"/>
 
 <input type="Submit" value="Add SubCategory">
@@ -45,8 +49,8 @@
 			<td>${sList.subCategoryDescription}</td>
 			<td>${sList.category.categoryName}</td>
 			
-            <td><a href="editSubCategory-${sList.subCategoryId}">EDIT</a></td>
-			<td><a href="deleteSubCategory-${sList.subCategoryId}">DELETE</a></td> 
+            <td><a href="updateSubCategoryById-${sList.subCategoryId}">EDIT</a></td>
+			<td><a href="deleteSubCategoryById-${sList.subCategoryId}">DELETE</a></td> 
 		</tr>
 	</c:forEach>
 

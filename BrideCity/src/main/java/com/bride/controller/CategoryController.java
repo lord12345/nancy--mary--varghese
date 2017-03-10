@@ -1,8 +1,11 @@
 package com.bride.controller;
 
+import javax.validation.Valid;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
+import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -29,22 +32,32 @@ public class CategoryController
 	
 	
 	@RequestMapping("/addcategory")
-	public String addCategory(@ModelAttribute("category") Category category)
+	public String addCategory(@Valid @ModelAttribute("category") Category category, BindingResult result)
 	{
+		
+		if(result.hasErrors())
+		{
+		  
+	      return  "categories";
+	      
+		}
+		
+		
 		
 		categoryService.addCategory(category);
 		return "redirect:/categoryPage";
 	}
 	
 	
-	@RequestMapping("/editCategory-{categoryId}")
-	public String getCategoryById(Category category, @PathVariable("categoryId") int categoryId)
+	@RequestMapping("/updateCategoryById-{categoryId}")
+	public String updateCategory(Model model, @PathVariable("categoryId") int categoryId)
 	{
+		model.addAttribute("category", categoryService.getCategoryById(categoryId));
 		return "categories";
 	}
 	
-	@RequestMapping("/deleteCategory-{categoryId}")
-	public String deleteCategory(Model model,@PathVariable("categoryId") int categoryId)
+	@RequestMapping("/deleteCategoryById-{categoryId}")
+	public String deleteCategory(@PathVariable("categoryId") int categoryId)
 	{
 		
 		categoryService.deleteCategory(categoryId);

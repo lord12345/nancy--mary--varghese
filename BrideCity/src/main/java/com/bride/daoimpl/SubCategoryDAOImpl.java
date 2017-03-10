@@ -16,9 +16,9 @@ import com.bride.model.SubCategory;
 public class SubCategoryDAOImpl implements SubCategoryDAO
 {
 	
-	private  Session   session;
+	
 	@Autowired
-	private SessionFactory sessionFactory;
+	 SessionFactory sessionFactory;
 
 	public void addSubCategory(SubCategory subCategory) 
 	{
@@ -28,34 +28,26 @@ public class SubCategoryDAOImpl implements SubCategoryDAO
 	
 	public List<SubCategory> fetchAllSubCategories()
 	{
-		 List<SubCategory> getSubList = sessionFactory.getCurrentSession().createQuery("from SubCategory").getResultList();
-		return getSubList;
+		 List<SubCategory> subCategoryList = sessionFactory.getCurrentSession().createQuery("from SubCategory").getResultList();
+		return subCategoryList;
 
     }
 	
-	@SuppressWarnings("unchecked")
+	
 	public SubCategory getSubCategoryById(int subCategoryId)
 	{
-		try{
-			List<SubCategory> getSubList = session.createQuery("from SubCategory where subCategoryId = "+subCategoryId+"").getResultList();
-			System.out.println(subCategoryId);
-			return getSubList.get(0);
-			}
-			catch(Exception e)
-			{
-				return null;
-			}
+		
+		List<SubCategory> getList = sessionFactory.getCurrentSession().createQuery("from SubCategory where subCategoryId = "+subCategoryId).getResultList();
+		return getList.get(0);
+		
+		
 		
 	}
 
 	public void deleteSubCategory(int subCategoryId)
 	{
 	
-		SubCategory c = new SubCategory();
-		c.setSubCategoryId(subCategoryId);
-		sessionFactory.getCurrentSession().delete(c);
-		
-		
+		sessionFactory.getCurrentSession().delete(getSubCategoryById(subCategoryId));
 			
 	}
 	

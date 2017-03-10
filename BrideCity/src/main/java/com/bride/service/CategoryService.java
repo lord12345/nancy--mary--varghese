@@ -23,17 +23,20 @@ public class CategoryService {
 	}
 
 	public List<Category> fetchAllCategories()
+	
 	{
 			return categoryDAOImpl.fetchAllCategories();
 		
 	}
 	
 	public Category getCategoryById(int categoryId) 
+	
 	{
 		return categoryDAOImpl.getCategoryById(categoryId);
 	}
 
 	public void deleteCategory(int categoryId) 
+	
 	{
 		categoryDAOImpl.deleteCategory(categoryId);
 	}

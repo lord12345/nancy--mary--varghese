@@ -12,7 +12,8 @@ import com.bride.model.SubCategory;
 
 @Service
 @Transactional
-public class SubCategoryService {
+public class SubCategoryService 
+{
 	@Autowired
 	
 	SubCategoryDAOImpl subCategoryDAOImpl;

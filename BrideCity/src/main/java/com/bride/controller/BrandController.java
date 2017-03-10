@@ -1,8 +1,11 @@
 package com.bride.controller;
 
+import javax.validation.Valid;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
+import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -29,22 +32,32 @@ public class BrandController
 	
 	
 	@RequestMapping("/addbrand")
-	public String addBrand(@ModelAttribute("brand") Brand brand)
+	public String addBrand(@Valid @ModelAttribute("brand") Brand brand,BindingResult result)
 	{
 		
-		brandService.addBrand(brand);
+		if(result.hasErrors())
+		{
+		
+			
+			return  "brands";
+			
+		}
+		brandService.addBrand(brand); 
 		return "redirect:/brandPage";
 	}
 	
 	
-	@RequestMapping("/editBrand-{brandId}")
-	public String getBrandById(Brand brand, @PathVariable("brandId") int brandId)
+	@RequestMapping("/updateBrandById-{brandId}")
+	public String updateBrand(Model model , @PathVariable("brandId") int brandId)
 	{
+		
+		model.addAttribute("brand", brandService.getBrandById(brandId));
 		return "brands";
+	
 	}
 	
-	@RequestMapping("/deleteBrand-{brandId}")
-	public String deleteBrand(Model model,@PathVariable("brandId") int brandId)
+	@RequestMapping("/deleteBrandById-{brandId}")
+	public String deleteBrand(@PathVariable("brandId") int brandId)
 	{
 		
 		brandService.deleteBrand(brandId);

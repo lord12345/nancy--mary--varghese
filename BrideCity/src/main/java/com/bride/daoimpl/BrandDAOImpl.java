@@ -14,7 +14,7 @@ import com.bride.model.Brand;
 
 public class BrandDAOImpl implements BrandDAO
 {
-	private    Session  session ;
+	
 	
 	@Autowired
 	private SessionFactory sessionFactory;
@@ -27,34 +27,24 @@ public class BrandDAOImpl implements BrandDAO
 	
 	public List<Brand> fetchAllBrands()
 	{
-		 List<Brand> getBrandList = sessionFactory.getCurrentSession().createQuery("from Brand").getResultList();
-		return getBrandList;
+		 List<Brand> BrandList = sessionFactory.getCurrentSession().createQuery("from Brand").getResultList();
+		return BrandList;
 
     }
 
 	@SuppressWarnings("unchecked")
-	public Brand getBrandById(int brandId) {
+	public Brand getBrandById(int brandId) 
 	
-		try{
-		List<Brand> getBrandList = session.createQuery("from Brand where brandId = "+brandId+"").getResultList();
-		System.out.println(brandId);
-		return getBrandList.get(0);
-		}
-		catch(Exception e)
-		{
-			return null;
-		}
+	{
 	
+	    List<Brand> getList = sessionFactory.getCurrentSession().createQuery("from Brand where brandId = "+brandId).getResultList();
+		return getList.get(0);
 		
-
 	}
 
 	public void deleteBrand(int brandId)
 	{
-		Brand c = new Brand();
-		c.setBrandId(brandId);
-		sessionFactory.getCurrentSession().delete(c);
-		
+		sessionFactory.getCurrentSession().delete(getBrandById(brandId));
 		
 
 	}

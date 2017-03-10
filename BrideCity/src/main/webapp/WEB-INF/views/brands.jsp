@@ -16,7 +16,11 @@
 
 <form:input path="brandId" type="hidden" placeholder="Add brand Id" />
 <form:input path="brandName" placeholder="Add brand Name" />
+<form:errors path="brandName"></form:errors>
+
 <form:input path="brandDescription" placeholder="Add brand Description" />
+<form:errors path="brandDescription"></form:errors>
+
 
 <input type="Submit" value="Add Brand">
 
@@ -40,8 +44,8 @@
 		    <td>${bList.brandId}</td>
 			<td>${bList.brandName}</td>
 			<td>${bList.brandDescription}</td>
-			<td><a href="editBrand-${bList.brandId}">EDIT</a></td>
-			<td><a href="deleteBrand-${bList.brandId}">DELETE</a></td>
+			<td><a href="updateBrandById-${bList.brandId}">EDIT</a></td>
+			<td><a href="deleteBrandById-${bList.brandId}">DELETE</a></td>
 		</tr>
 	</c:forEach>
 

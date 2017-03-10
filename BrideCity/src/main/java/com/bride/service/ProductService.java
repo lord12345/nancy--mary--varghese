@@ -28,6 +28,12 @@ public class ProductService {
 		
 	}
 	
+	public String fetchAllProductsJSON()
+	{
+		return productDAOImpl.fetchAllProductsJSON();
+	}
+	
+	
 	public Product getProductById(int productId) 
 	{
 		return productDAOImpl.getProductById(productId);

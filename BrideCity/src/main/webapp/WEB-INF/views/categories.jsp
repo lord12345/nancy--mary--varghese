@@ -15,7 +15,10 @@
 
 <form:input  type="hidden" path="categoryId"  placeholder="Add category Id" />
 <form:input path="categoryName" placeholder="Add category Name" />
+<form:errors path="categoryName"></form:errors>
+
 <form:input path="categoryDescription" placeholder="Add category Description" />
+<form:errors path="categoryDescription"></form:errors>
 
 <input type="Submit" value="Add Category">
 
@@ -40,8 +43,8 @@
 		    <td>${cList.categoryId}</td>
 			<td>${cList.categoryName}</td>
 			<td>${cList.categoryDescription}</td>
-			<td><a href="editCategory-${cList.categoryId}">EDIT</a></td>
-			<td><a href="deleteCategory-${cList.categoryId}">DELETE</a></td>
+			<td><a href="updateCategoryById-${cList.categoryId}">EDIT</a></td>
+			<td><a href="deleteCategoryById-${cList.categoryId}">DELETE</a></td>
 		</tr>
 	</c:forEach>
 

@@ -6,6 +6,7 @@ import com.bride.model.Category;
 
 
 public interface CategoryDAO 
+
 {
 	
 	

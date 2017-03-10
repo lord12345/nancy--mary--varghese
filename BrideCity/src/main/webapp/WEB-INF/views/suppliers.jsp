@@ -19,7 +19,9 @@
 
 <form:input path="supplierId" type="hidden" placeholder="Add supplier Id" />
 <form:input path="supplierName" placeholder="Add supplier Name" />
+<form:errors path="supplierName"></form:errors>
 <form:input path="supplierDescription" placeholder="Add supplier Description" />
+<form:errors path="supplierDescription"></form:errors>
 
 <input type="Submit" value="Add Supplier">
 
@@ -44,8 +46,8 @@
 		    <td>${uList.supplierId}</td>
 			<td>${uList.supplierName}</td>
 			<td>${uList.supplierDescription}</td>
-			<td><a href="editSupplier-${uList.supplierId}">EDIT</a></td>
-			<td><a href="deleteSupplier-${uList.supplierId}">DELETE</a></td>
+			<td><a href="updateSupplierById-${uList.supplierId}">EDIT</a></td>
+			<td><a href="deleteSupplierById-${uList.supplierId}">DELETE</a></td>
 		</tr>
 	</c:forEach>
 
