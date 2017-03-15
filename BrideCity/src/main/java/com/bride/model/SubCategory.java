@@ -54,13 +54,16 @@ public class SubCategory
 	public int getCategoryId() {
 		return categoryId;
 	}
-	public void setCategoryId(int categoryId) {
+	public void setCategoryId(int categoryId) 
+	{
 		this.categoryId = categoryId;
 	}
-	public Category getCategory() {
+	public Category getCategory()
+	{
 		return category;
 	}
-	public void setCategory(Category category) {
+	public void setCategory(Category category) 
+	{
 		this.category = category;
 	}
 	

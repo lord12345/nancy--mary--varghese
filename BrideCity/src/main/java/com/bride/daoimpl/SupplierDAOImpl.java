@@ -10,6 +10,7 @@ import org.springframework.stereotype.Repository;
 import com.bride.dao.SupplierDAO;
 import com.bride.model.Brand;
 import com.bride.model.Supplier;
+import com.google.gson.Gson;
 @Repository
 
 
@@ -33,6 +34,15 @@ public class SupplierDAOImpl implements SupplierDAO
 
     }
 
+	
+	public String fetchAllSuppliersByJson() {
+		List<Supplier> SupList = sessionFactory.getCurrentSession().createQuery("from Supplier").getResultList();
+		Gson g = new Gson();
+		String list = g.toJson(SupList);
+		return list;
+	}
+	
+	
 	@SuppressWarnings("unchecked")
 	public Supplier getSupplierById(int supplierId) 
 	{

@@ -8,7 +8,9 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
 
 import com.bride.dao.SubCategoryDAO;
+import com.bride.model.Category;
 import com.bride.model.SubCategory;
+import com.google.gson.Gson;
 
 @Repository
 
@@ -32,6 +34,15 @@ public class SubCategoryDAOImpl implements SubCategoryDAO
 		return subCategoryList;
 
     }
+	
+	public String fetchAllSubCategoriesByJson() {
+		List<SubCategory> subCategoryList = sessionFactory.getCurrentSession().createQuery("from SubCategory").getResultList();
+		Gson g = new Gson();
+		String list = g.toJson(subCategoryList);
+		return list;
+	}
+	
+	
 	
 	
 	public SubCategory getSubCategoryById(int subCategoryId)

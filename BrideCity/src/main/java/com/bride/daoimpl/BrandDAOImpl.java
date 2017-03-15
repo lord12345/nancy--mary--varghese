@@ -9,6 +9,8 @@ import org.springframework.stereotype.Repository;
 
 import com.bride.dao.BrandDAO;
 import com.bride.model.Brand;
+import com.bride.model.Category;
+import com.google.gson.Gson;
 @Repository
 
 
@@ -27,11 +29,20 @@ public class BrandDAOImpl implements BrandDAO
 	
 	public List<Brand> fetchAllBrands()
 	{
-		 List<Brand> BrandList = sessionFactory.getCurrentSession().createQuery("from Brand").getResultList();
-		return BrandList;
+		 List<Brand> brandList = sessionFactory.getCurrentSession().createQuery("from Brand").getResultList();
+		return brandList;
 
     }
 
+	public String fetchAllBrandsByJson() {
+		List<Brand> brandList = sessionFactory.getCurrentSession().createQuery("from Brand").getResultList();
+		Gson g = new Gson();
+		String list = g.toJson(brandList);
+		return list;
+	}
+	
+	
+	
 	@SuppressWarnings("unchecked")
 	public Brand getBrandById(int brandId) 
 	

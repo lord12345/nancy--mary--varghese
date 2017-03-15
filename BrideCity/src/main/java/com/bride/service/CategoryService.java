@@ -29,6 +29,12 @@ public class CategoryService {
 		
 	}
 	
+	public String fetchAllCategoriesByJson()
+	{
+		return categoryDAOImpl.fetchAllCategoriesByJson();
+	}
+	
+	
 	public Category getCategoryById(int categoryId) 
 	
 	{

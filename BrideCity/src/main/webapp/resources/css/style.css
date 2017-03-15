@@ -1,0 +1,15 @@
+/* -----------this is used for making the navbar transparent----------------  */
+ .navbar-transparent 
+{
+	background-image:url("p2.jpg");
+}
+.icon-bar{
+	background-color: black;
+}
+/* -----------bootstrap slider----------------  */
+.carousel-inner > .item > img,
+  .carousel-inner > .item > a > img {
+      width: 100%;
+      margin: auto;
+      max-height: 400px;
+  }

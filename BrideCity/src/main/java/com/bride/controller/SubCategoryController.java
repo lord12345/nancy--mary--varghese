@@ -28,13 +28,17 @@ public class SubCategoryController
 	@RequestMapping("/subCategoryPage")
 	public String getSubCategoryPage(Model model)
 	{   
-		      /*    adding   Category
+		      /*    adding   Category,
               displaying category   and   subcategory  list  in   table*/
 		
 		
 		model.addAttribute("subCategory",new SubCategory());
 		model.addAttribute("subCategoryList", subCategoryService.fetchAllSubCategories());
 		model.addAttribute("categoryList", categoryService.fetchAllCategories());
+		
+		model.addAttribute("categoryListByJson", categoryService.fetchAllCategoriesByJson());
+		model.addAttribute("subCategoryListByJson", subCategoryService.fetchAllSubCategoriesByJson());
+		
 	    return "subcategories";
 	}
 	

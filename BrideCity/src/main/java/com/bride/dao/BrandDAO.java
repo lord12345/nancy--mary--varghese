@@ -13,7 +13,7 @@ public interface BrandDAO
 	public void addBrand(Brand brand); 
 	
 	public List<Brand> fetchAllBrands();
-	
+	public String fetchAllBrandsByJson();
 	
 	public Brand getBrandById(int brandId);
 

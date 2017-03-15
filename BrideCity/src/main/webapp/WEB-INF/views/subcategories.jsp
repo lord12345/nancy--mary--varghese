@@ -1,17 +1,4 @@
-<%@ page language="java" contentType="text/html; charset=ISO-8859-1"
-    pageEncoding="ISO-8859-1" isELIgnored="false"%>
-    
-    <%@taglib prefix="form" uri="http://www.springframework.org/tags/form"%>
-   <%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
-<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
-<html>
-<head>
-<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
-<title>SUB CATEGORY  PAGE</title>
-</head>
-
-
-<body>
+<%@ include file="header.jsp" %>
 
 <h1>SUB   CATEGORY PAGE</h1>
 <form:form modelAttribute="subCategory" action="addSubCategory">
@@ -30,7 +17,7 @@
 </form:form>
 
 <br><br>
-<table  border= "1">
+<%-- <table  border= "1">
 	
 	<tr>
 	    <th>SubCategory Id </th>
@@ -54,6 +41,46 @@
 		</tr>
 	</c:forEach>
 
+</table> --%>
+
+
+
+<div ng-app="myApp">
+<input  type="text" ng-model="search" placeholder="search" />
+<br>
+ <table class="table" ng-controller="myController">
+<tr>
+<th>subCategoryId</th>
+<th>subCategoryName</th>
+<th>subCategoryDescription</th>
+<th>Category</th>
+<th>Edit</th>
+<th>Delete </th> 
+</tr>
+<tr ng-repeat="slist in myscope | filter:search">
+<td>{{slist.subCategoryId}}</td>
+<td>{{slist.subCategoryName}}</td>
+<td>{{slist.subCategoryDescription}}</td>
+<td>${slist.category.categoryName}</td>
+<td><a href="updateSubCategoryById-{{slist.SubCategoryId}}">Edit</a></td>
+<td><a href="deleteSubCategoryById-{{slist.SubCategoryId}}">Delete</a></td>
+</tr>
 </table>
-</body>
-</html>
+</div>
+
+
+
+  
+<script type="text/javascript" src="resources/js/jquery-3.1.1.min.js" ></script>
+<script type="text/javascript" src="resources/js/bootstrap.min.js" /></script>
+<script type="text/javascript" src="resources/js/angular.min.js"/></script>
+ 
+ <script>
+var a=angular.module('myApp',[]);
+a.controller('myController', function($scope){
+$scope.myscope= ${subCategoryListByJson}
+
+});
+</script>
+
+

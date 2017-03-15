@@ -1,4 +1,4 @@
-<%@ page language="java" contentType="text/html; charset=ISO-8859-1"
+ <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
 	pageEncoding="ISO-8859-1"%>
 	
 	 <%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
@@ -15,7 +15,7 @@
 
 </head>
 <body>
-	<%-- <div id="navbar">
+	<div id="navbar">
 		<nav class="navbar navbar-default navbar-static-top" role="navigation">
 		
 		<div class="collapse navbar-collapse" id="navbar-collapse-1">
@@ -41,7 +41,7 @@
 			</c:forEach>
 		</div>
 		<!-- /.navbar-collapse --> </nav>
-	</div> --%>
+	</div> 
 
 
 	<script type="text/javascript" src="resources/js/jquery-3.1.1.min.js"></script>
@@ -50,4 +50,4 @@
 
 
 </body>
-</html>
+</html> 

@@ -21,6 +21,23 @@ public class BrideCtyController
 	@Autowired
 	ProductService  productService;
 	
+	
+	
+	@RequestMapping("/Login")
+	public String getLogin()
+	{
+		return "login";
+	}
+	
+	
+	@RequestMapping("/SignUp")
+	public String getSignUp()
+	{
+		return "signup";
+	}
+	
+	
+	
 	@RequestMapping("/")
 	
 	public String getHome(Model  model)

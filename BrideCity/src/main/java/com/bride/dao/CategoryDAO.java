@@ -15,6 +15,7 @@ public interface CategoryDAO
 	
 	public List<Category> fetchAllCategories();
 	
+	public String fetchAllCategoriesByJson();
 	
 	public Category getCategoryById(int categoryId);
 

@@ -1,32 +1,23 @@
-<%@ page language="java" contentType="text/html; charset=ISO-8859-1"
-    pageEncoding="ISO-8859-1" isELIgnored="false"%>
-    <%@taglib prefix="form" uri="http://www.springframework.org/tags/form"%>
-   <%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
-   
-<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
-<html>
-<head>
-<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
-<title>CATEGORY  PAGE</title>
-</head>
-<body>
-
-<form:form modelAttribute="category" action="addcategory">
-
-<form:input  type="hidden" path="categoryId"  placeholder="Add category Id" />
-<form:input path="categoryName" placeholder="Add category Name" />
-<form:errors path="categoryName"></form:errors>
-
-<form:input path="categoryDescription" placeholder="Add category Description" />
-<form:errors path="categoryDescription"></form:errors>
-
-<input type="Submit" value="Add Category">
+<%@ include file="header.jsp" %>
 
 
 <h1>CATEGORY   PAGE</h1>
-</form:form>
+  <form:form modelAttribute="category" action="addcategory">
+
+<form:input  type="hidden" path="categoryId"  placeholder="Add category Id" />
+<form:input  class="form-control"   path="categoryName" placeholder="Add category Name" />
+<form:errors path="categoryName"></form:errors>
+
+<form:input    class="form-control"  path="categoryDescription" placeholder="Add category Description" />
+<form:errors path="categoryDescription"></form:errors>
+
+<input type="Submit" value="Add Category">
+ 
+
+</form:form> 
+
 <br><br>
-<table  border= "1">
+ <%-- <table  border= "1">
 	<tr>
 	   
 	    <th>Category Id</th>
@@ -49,6 +40,33 @@
 	</c:forEach>
 
 </table>
+ 
+  --%>
+   
+<div ng-app="myApp">
+<input  type="text" ng-model="search" placeholder="search" />
+<br>
+ <table class="table" ng-controller="myController">
+<tr>
+<th>CategoryId</th>
+<th>CategoryName</th>
+<th>CategoryDescription</th>
+<th>Update </th>
+<th>Delete </th> 
+</tr>
+<tr ng-repeat="clist in myscope | filter:search">
+<td>{{clist.categoryId}}</td>
+<td>{{clist.categoryName}}</td>
+<td>{{clist.categoryDescription}}</td>
+<td><a href="updateCategoryById-{{clist.categoryId}}">Edit</a></td>
+<td><a href="deleteCategoryById-{{clist.categoryId}}">Delete</a></td>
+</tr>
+</table>
+</div>
 
-</body>
-</html>
+ <script>
+var a=angular.module('myApp',[]);
+a.controller('myController', function($scope){
+$scope.myscope= ${categoryListByJson}
+});
+</script>

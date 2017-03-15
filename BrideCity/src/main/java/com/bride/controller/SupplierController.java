@@ -25,7 +25,8 @@ public class SupplierController
 	public String getSupplierPage(Model model)
 	{
 		model.addAttribute("supplier",new Supplier());
-		model.addAttribute("supplierList", supplierService.fetchAllSuppliers());
+		/*model.addAttribute("SupList", supplierService.fetchAllSuppliers());*/
+		 model.addAttribute("SupListByJson", supplierService.fetchAllSuppliersByJson());
 		return "suppliers";
 	}
 	

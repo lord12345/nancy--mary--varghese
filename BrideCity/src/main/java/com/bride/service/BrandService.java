@@ -28,6 +28,12 @@ public class BrandService {
 		
 	}
 	
+	public String fetchAllBrandsByJson()
+	{
+		return brandDAOImpl.fetchAllBrandsByJson();
+	}
+	
+	
 	public Brand getBrandById(int brandId) 
 	{
 		return brandDAOImpl.getBrandById(brandId);

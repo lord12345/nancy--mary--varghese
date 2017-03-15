@@ -28,6 +28,13 @@ public class SupplierService {
 		
 	}
 	
+	public String fetchAllSuppliersByJson()
+	{
+		return supplierDAOImpl.fetchAllSuppliersByJson();
+	}
+	
+	
+	
 	public Supplier getSupplierById(int supplierId) 
 	{
 		return supplierDAOImpl.getSupplierById(supplierId);

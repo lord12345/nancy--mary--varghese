@@ -9,6 +9,12 @@
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
+
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+ <link href="resources/css/bootstrap.min.css" rel="stylesheet" />
+
+
 <title>Supplier Page</title>
 </head>
 
@@ -29,14 +35,14 @@
 <h1>SUPPLIER  PAGE</h1>
 </form:form>
 <br><br>
-<table  border= "1">
+<%-- <table  border= "1">
 	<tr>
 	   
 	    <th>Supplier Id</th>
 		<th>Supplier Name</th>
 		<th>Supplier Description</th>
 		<th>Edit</th>
-		<th> Delete</th>
+		<th>Delete</th>
 	</tr>
 
 
@@ -51,6 +57,47 @@
 		</tr>
 	</c:forEach>
 
+</table> --%>
+
+
+
+<div ng-app="myApp">
+<input  type="text" ng-model="search" placeholder="search" />
+<br>
+ <table class="table" ng-controller="myController">
+<tr>
+<th>SupplierId</th>
+<th>SupplierName</th>
+<th>SupplierDescription</th>
+<th>Update </th>
+<th>Delete </th> 
+</tr>
+<tr ng-repeat="ulist in myscope | filter:search">
+<td>{{ulist.supplierId}}</td>
+<td>{{ulist.supplierName}}</td>
+<td>{{ulist.supplierDescription}}</td>
+<td><a href="updateSupplierById-{{ulist.supplierId}}">Edit</a></td>
+<td><a href="deleteSupplierById-{{ulist.supplierId}}">Delete</a></td>
+</tr>
 </table>
+</div>
+
+
+
+  
+<script type="text/javascript" src="resources/js/jquery-3.1.1.min.js" ></script>
+<script type="text/javascript" src="resources/js/bootstrap.min.js" /></script>
+<script type="text/javascript" src="resources/js/angular.min.js"/></script>
+ 
+ <script>
+var a=angular.module('myApp',[]);
+a.controller('myController', function($scope){
+$scope.myscope= ${SupListByJson}
+});
+</script>
+
+
+
+
 </body>
 </html>

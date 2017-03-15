@@ -25,7 +25,8 @@ public class BrandController
 	public String getBrandPage(Model model)
 	{
 		model.addAttribute("brand",new Brand());
-		model.addAttribute("brandList", brandService.fetchAllBrands());
+		/*model.addAttribute("brandList", brandService.fetchAllBrands());*/
+		model.addAttribute("brandListByJson", brandService.fetchAllBrandsByJson());
 		return "brands";
 	}
 	

@@ -8,6 +8,13 @@
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
+
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+<link href="resources/css/bootstrap.min.css" rel="stylesheet" />
+
+
+
 <title>BRAND  Page</title>
 </head>
 <body>
@@ -28,7 +35,7 @@
 
 </form:form>
 <br><br>
-<table  border= "1">
+<%-- <table  border= "1">
 	<tr>
 	    <th>Brand Id</th>
 		<th>Brand Name</th>
@@ -53,17 +60,41 @@
 
 
 
+ --%>
+<div ng-app="myApp">
+<input  type="text" ng-model="search" placeholder="search" />
+<br>
+ <table class="table" ng-controller="myController">
+<tr>
+<th>BrandId</th>
+<th>BrandName</th>
+<th>BrandDescription</th>
+<th>Update </th>
+<th>Delete </th> 
+</tr>
+<tr ng-repeat="blist in myscope | filter:search">
+<td>{{blist.brandId}}</td>
+<td>{{blist.brandName}}</td>
+<td>{{blist.brandDescription}}</td>
+<td><a href="updateCategoryById-{{blist.brandId}}">Edit</a></td>
+<td><a href="deleteCategoryById-{{blist.brandId}}">Delete</a></td>
+</tr>
+</table>
+</div>
 
 
 
-
-
-
-
-
-
-
-
+  
+<script type="text/javascript" src="resources/js/jquery-3.1.1.min.js" ></script>
+<script type="text/javascript" src="resources/js/bootstrap.min.js" /></script>
+<script type="text/javascript" src="resources/js/angular.min.js"/></script>
+ 
+ <script>
+var a=angular.module('myApp',[]);
+a.controller('myController', function($scope){
+$scope.myscope= ${brandListByJson}
+});
+</script>
 
 
 </body>
