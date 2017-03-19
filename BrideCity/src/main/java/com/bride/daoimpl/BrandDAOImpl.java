@@ -11,6 +11,7 @@ import com.bride.dao.BrandDAO;
 import com.bride.model.Brand;
 import com.bride.model.Category;
 import com.google.gson.Gson;
+import com.google.gson.GsonBuilder;
 @Repository
 
 
@@ -36,7 +37,7 @@ public class BrandDAOImpl implements BrandDAO
 
 	public String fetchAllBrandsByJson() {
 		List<Brand> brandList = sessionFactory.getCurrentSession().createQuery("from Brand").getResultList();
-		Gson g = new Gson();
+		Gson g =  new GsonBuilder().excludeFieldsWithoutExposeAnnotation().create();
 		String list = g.toJson(brandList);
 		return list;
 	}

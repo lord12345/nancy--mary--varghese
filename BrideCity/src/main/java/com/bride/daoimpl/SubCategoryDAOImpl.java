@@ -11,6 +11,7 @@ import com.bride.dao.SubCategoryDAO;
 import com.bride.model.Category;
 import com.bride.model.SubCategory;
 import com.google.gson.Gson;
+import com.google.gson.GsonBuilder;
 
 @Repository
 
@@ -37,7 +38,7 @@ public class SubCategoryDAOImpl implements SubCategoryDAO
 	
 	public String fetchAllSubCategoriesByJson() {
 		List<SubCategory> subCategoryList = sessionFactory.getCurrentSession().createQuery("from SubCategory").getResultList();
-		Gson g = new Gson();
+		Gson g = new GsonBuilder().excludeFieldsWithoutExposeAnnotation().create();
 		String list = g.toJson(subCategoryList);
 		return list;
 	}

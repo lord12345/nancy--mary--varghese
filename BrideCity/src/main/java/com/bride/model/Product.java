@@ -1,5 +1,7 @@
 package com.bride.model;
 
+import java.util.List;
+
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
@@ -7,185 +9,239 @@ import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
 import javax.persistence.Transient;
-import javax.validation.constraints.Min;
-import javax.validation.constraints.NotNull;
 
 import org.hibernate.validator.constraints.NotEmpty;
 import org.springframework.web.multipart.MultipartFile;
 
-
+import com.google.gson.annotations.Expose;
 
 @Entity
 public class Product 
 {
-
+	@Expose
 	@Id
-	@GeneratedValue(strategy = GenerationType.IDENTITY)
-	
-	
-	
+	@GeneratedValue(strategy=GenerationType.IDENTITY)
     private  int productId;
+    
+	@Expose
+	@NotEmpty(message="Product Name can not be empty")
+    private String productName;
 	
-	@NotEmpty(message="productName  is  required")
-	private String productName;
+	@Expose
+	@NotEmpty(message="Product Description can not be empty")
+    private String productDescription;
 	
-	@NotEmpty(message="productDescription  is  required")
-	private String productDescription;
+	@Expose
+    private double productActualPrice;
 	
-	@NotNull(message="productPrice is   required")
-	@Min(value=1,message="Cannot  be   less than 1")
-	private float  productPrice;
+	@Expose
+    private double productDiscount;
+
 	
-	@NotNull(message="productDiscount is   required")
-	@Min(value=1,message="Cannot  be   less than 1")
-	private float productDiscount;
+	@Expose
+    private int categoryId;
 	
-	  
-	            /*foreign keys */
+	@Expose
+    private int subCategoryId;
 	
+	@Expose	
+    private int supplierId;
 	
-	private int categoryId;
-	private int subCategoryId;
-	private int supplierId;
-	private int brandId;
-	          
-	
-	     /*,,,,,,,,,,FOR  IMG  UPLOADING,,,,,,,,,,,,,,,*/
-	
-	
+	@Expose
+    private int brandId;
+	    
+	@Expose
+    @ManyToOne
+    @JoinColumn(name="categoryId", nullable=false , updatable=false , insertable=false )
+    private Category category;
+    
+	@Expose
+    @ManyToOne
+    @JoinColumn(name="subCategoryId", nullable=false , updatable=false , insertable=false )
+    private SubCategory subCategory;
+    
+	@Expose
+    @ManyToOne
+    @JoinColumn(name="supplierId", nullable=false , updatable=false , insertable=false )
+    private Supplier supplier;
+
+	@Expose
+	@ManyToOne
+    @JoinColumn(name="brandId", nullable=false , updatable=false , insertable=false )
+    private Brand brand;
+
+    
 	
 	@Transient
-	private MultipartFile productImage;
-	
-	
-	@ManyToOne
-	@JoinColumn(name="categoryId", nullable=false , updatable=false , insertable=false )
-	private Category category;
-	
-	@ManyToOne
-	@JoinColumn(name="subCategoryId", nullable=false , updatable=false , insertable=false )
-	private SubCategory subCategory;
-	
-	@ManyToOne
-	@JoinColumn(name="supplierId", nullable=false , updatable=false , insertable=false )
-	private Supplier supplier;
-	
-	@ManyToOne
-	@JoinColumn(name="brandId", nullable=false , updatable=false , insertable=false )
-	private Brand brand;
+    private List<MultipartFile> productImage;
+
+
 
 	public int getProductId() {
 		return productId;
 	}
 
+
+
 	public void setProductId(int productId) {
 		this.productId = productId;
 	}
 
-	public MultipartFile getProductImage() {
-		return productImage;
-	}
 
-	public void setProductImage(MultipartFile productImage) {
-		this.productImage = productImage;
-	}
 
 	public String getProductName() {
 		return productName;
 	}
 
+
+
 	public void setProductName(String productName) {
 		this.productName = productName;
 	}
+
+
 
 	public String getProductDescription() {
 		return productDescription;
 	}
 
+
+
 	public void setProductDescription(String productDescription) {
 		this.productDescription = productDescription;
 	}
 
-	public float getProductPrice() {
-		return productPrice;
+
+
+	public double getProductActualPrice() {
+		return productActualPrice;
 	}
 
-	public void setProductPrice(float productPrice) {
-		this.productPrice = productPrice;
+
+
+	public void setProductActualPrice(double productActualPrice) {
+		this.productActualPrice = productActualPrice;
 	}
 
-	public float getProductDiscount() {
+
+
+	public double getProductDiscount() {
 		return productDiscount;
 	}
 
-	public void setProductDiscount(float productDiscount) {
+
+
+	public void setProductDiscount(double productDiscount) {
 		this.productDiscount = productDiscount;
 	}
+
+
 
 	public int getCategoryId() {
 		return categoryId;
 	}
 
+
+
 	public void setCategoryId(int categoryId) {
 		this.categoryId = categoryId;
 	}
+
+
 
 	public int getSubCategoryId() {
 		return subCategoryId;
 	}
 
+
+
 	public void setSubCategoryId(int subCategoryId) {
 		this.subCategoryId = subCategoryId;
 	}
+
+
 
 	public int getSupplierId() {
 		return supplierId;
 	}
 
+
+
 	public void setSupplierId(int supplierId) {
 		this.supplierId = supplierId;
 	}
+
+
 
 	public int getBrandId() {
 		return brandId;
 	}
 
+
+
 	public void setBrandId(int brandId) {
 		this.brandId = brandId;
 	}
+
+
 
 	public Category getCategory() {
 		return category;
 	}
 
+
+
 	public void setCategory(Category category) {
 		this.category = category;
 	}
+
+
 
 	public SubCategory getSubCategory() {
 		return subCategory;
 	}
 
+
+
 	public void setSubCategory(SubCategory subCategory) {
 		this.subCategory = subCategory;
 	}
+
+
 
 	public Supplier getSupplier() {
 		return supplier;
 	}
 
+
+
 	public void setSupplier(Supplier supplier) {
 		this.supplier = supplier;
 	}
+
+
 
 	public Brand getBrand() {
 		return brand;
 	}
 
+
+
 	public void setBrand(Brand brand) {
 		this.brand = brand;
 	}
 
+
+
+	public List<MultipartFile> getProductImage() {
+		return productImage;
+	}
+
+
+
+	public void setProductImage(List<MultipartFile> productImage) {
+		this.productImage = productImage;
+	} 
 	
 	
 	

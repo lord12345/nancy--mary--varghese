@@ -28,9 +28,9 @@ public class ProductService {
 		
 	}
 	
-	public String fetchAllProductsJSON()
+	public String fetchAllProductsByJSON()
 	{
-		return productDAOImpl.fetchAllProductsJSON();
+		return productDAOImpl.fetchAllProductsByJSON();
 	}
 	
 	

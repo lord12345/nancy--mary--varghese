@@ -2,7 +2,7 @@ package com.bride.dao;
 
 import java.util.List;
 
-import com.bride.model.Category;
+
 import com.bride.model.SubCategory;
 
 

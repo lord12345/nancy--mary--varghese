@@ -11,17 +11,23 @@ import javax.persistence.OneToMany;
 
 import org.hibernate.validator.constraints.NotEmpty;
 
+import com.google.gson.annotations.Expose;
+
 @Entity
 public class Category 
 {
 	@Id
+	@Expose
 	@GeneratedValue(strategy=GenerationType.IDENTITY)
-	
 	private int categoryId;
 	
+	
+	@Expose
 	@NotEmpty(message="categoryName is required")
 	private String categoryName;
 	
+	
+	@Expose
 	@NotEmpty(message="categoryDescription  is   required")
 	private String categoryDescription;
 	
@@ -30,7 +36,7 @@ public class Category
 	
 	             /*.....one  to  many  from  category  to   subcategory.....*/	
 	
-	/*@OneToMany(mappedBy="category",fetch=FetchType.EAGER)
+	@OneToMany(mappedBy="category",fetch=FetchType.EAGER)
 	private Set<SubCategory> subCategory;
 	
 	
@@ -42,7 +48,7 @@ public class Category
 	{
 		this.subCategory = subCategory;
 	}
-	*/
+	
 	
 	             /*   ..END.....*/
 	

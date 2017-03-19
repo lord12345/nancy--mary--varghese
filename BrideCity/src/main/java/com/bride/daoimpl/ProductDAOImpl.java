@@ -11,6 +11,7 @@ import org.springframework.stereotype.Repository;
 import com.bride.dao.ProductDAO;
 import com.bride.model.Product;
 import com.google.gson.Gson;
+import com.google.gson.GsonBuilder;
 
 
 
@@ -37,11 +38,11 @@ public class ProductDAOImpl  implements  ProductDAO
 
     }
 
-	public String fetchAllProductsJSON()
+	public String fetchAllProductsByJSON()
 	{
 		List<Product> productList = sessionFactory.getCurrentSession().createQuery("from Product").getResultList();
-		Gson gson = new Gson();
-		String list = gson.toJson(productList);
+		Gson g = new GsonBuilder().excludeFieldsWithoutExposeAnnotation().create();
+		String list = g.toJson(productList);
 		return list;
 	}
 	

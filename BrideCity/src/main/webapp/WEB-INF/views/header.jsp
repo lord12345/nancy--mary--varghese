@@ -3,7 +3,7 @@
     
    <%@taglib prefix="form" uri="http://www.springframework.org/tags/form"%>
    <%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
-    
+    <%@ taglib prefix="security" uri="http://www.springframework.org/security/tags"%>
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
 <head>
@@ -99,8 +99,19 @@
       
         <li><a href="#">Contact Us</a></li>
         <li><a href="#"><span class="glyphicon glyphicon-shopping-cart"></span> Cart</a></li> 
-        <li><a href="SignUp"><span class="glyphicon glyphicon-user"></span> Sign Up</a></li>
-        <li><a href="Login"><span class="glyphicon glyphicon-log-in"></span> Login</a></li>
+        
+        <li>
+        <!-- <a href="#" style="space-top: 10px; color: #fff;">Welcome,  -->
+    	   <security:authorize access="isAuthenticated()">
+   	       <security:authentication property="principal.username" /> 
+	       </security:authorize> 
+        <li><a href="registrationPage"><span class="glyphicon glyphicon-user"></span> Sign Up</a></li>
+        <li><a href="login"><span class="glyphicon glyphicon-log-in"></span> Login</a></li>
+        <li><a href="logout"><span class="glyphicon glyphicon-log-out"></span> Logout</a></li>
+        
+        </a></li>
+        
+        
         
       </ul>
     </div><!-- /.navbar-collapse -->

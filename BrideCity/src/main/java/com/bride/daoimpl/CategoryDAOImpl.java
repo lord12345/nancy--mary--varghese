@@ -10,6 +10,7 @@ import org.springframework.stereotype.Repository;
 import com.bride.dao.CategoryDAO;
 import com.bride.model.Category;
 import com.google.gson.Gson;
+import com.google.gson.GsonBuilder;
 @Repository
 
 
@@ -35,7 +36,7 @@ public class CategoryDAOImpl implements CategoryDAO
 
 	public String fetchAllCategoriesByJson() {
 		List<Category> categoryList = sessionFactory.getCurrentSession().createQuery("from Category").getResultList();
-		Gson g = new Gson();
+		Gson g = new GsonBuilder().excludeFieldsWithoutExposeAnnotation().create();
 		String list = g.toJson(categoryList);
 		return list;
 	}

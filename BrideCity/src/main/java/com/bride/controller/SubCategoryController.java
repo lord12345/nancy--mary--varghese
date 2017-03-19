@@ -35,7 +35,6 @@ public class SubCategoryController
 		model.addAttribute("subCategory",new SubCategory());
 		model.addAttribute("subCategoryList", subCategoryService.fetchAllSubCategories());
 		model.addAttribute("categoryList", categoryService.fetchAllCategories());
-		
 		model.addAttribute("categoryListByJson", categoryService.fetchAllCategoriesByJson());
 		model.addAttribute("subCategoryListByJson", subCategoryService.fetchAllSubCategoriesByJson());
 		
@@ -51,6 +50,8 @@ public class SubCategoryController
 		
 		if(result.hasErrors())
 		{
+			model.addAttribute("categoryListByJson", categoryService.fetchAllCategoriesByJson());
+			model.addAttribute("subCategoryListByJson", subCategoryService.fetchAllSubCategoriesByJson());
 			model.addAttribute("categoryList", categoryService.fetchAllCategories());
 			return "subcategories";
 		}
@@ -75,6 +76,9 @@ public class SubCategoryController
 		
 		model.addAttribute("subCategoryList", subCategoryService.fetchAllSubCategories());
 		model.addAttribute("categoryList", categoryService.fetchAllCategories());
+		model.addAttribute("categoryListByJson", categoryService.fetchAllCategoriesByJson());
+		model.addAttribute("subCategoryListByJson", subCategoryService.fetchAllSubCategoriesByJson());
+		
 		return "subcategories";
 	}
 	

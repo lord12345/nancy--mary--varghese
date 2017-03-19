@@ -1,39 +1,62 @@
-<%@ page language="java" contentType="text/html; charset=ISO-8859-1"
-    pageEncoding="ISO-8859-1" isELIgnored="false"%>
-    
-    <%@taglib prefix="form" uri="http://www.springframework.org/tags/form"%>
-   <%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
-   
-<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
-<html>
-<head>
-<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
+ <%@ include file="header.jsp" %>
 
-<meta name="viewport" content="width=device-width, initial-scale=1">
+ <div class="text-center">
+ 		<h1>Brand Form</h1>
+ 	</div>
+      <br>
 
-<link href="resources/css/bootstrap.min.css" rel="stylesheet" />
+ 	<div class="form">
+		<form:form modelAttribute="brand" action="addbrand">
+			
+			<form:input type="hidden" path="brandId" placeholder="Brand Id" /> 
+		  <div class="row">
+		  	<div class="col-xs-12 col-sm-4 col-md-4">
+				<form:label  path="brandName">Enter Brand Name</form:label>		
+			</div>
+		  	<div class="col-xs-12 col-sm-4 col-md-4">
+				<form:input class="form-control" path="brandName" placeholder="BrandName" autofocus="true" />		
+			</div>
+			<div class="col-xs-12 col-sm-4 col-md-4">
+				<form:errors cssClass="error" path="brandName" />
+			</div>
+		  </div>
+		  <br>
+		  <div class="row">
+		  	<div class="col-xs-12 col-sm-4 col-md-4">
+				<form:label  path="brandDescription">Enter Brand Description</form:label>		
+			</div>
+		  	<div class="col-xs-12 col-sm-4 col-md-4">		
+				<form:input class="form-control" path="brandDescription" placeholder="Brand Description" />
+			</div>
+			<div class="col-xs-12 col-sm-4 col-md-4">
+				<form:errors cssClass="error" path="brandDescription" />
+			</div>	
+		  </div>
+		  
+		  
+	<div class="row">
+					<div class="col-xs-12 col-sm-4 col-md-4">
+						<form:label path="subCategoryId"> SubCategory of Brand</form:label>
+					</div>
+					<div class="col-xs-12 col-sm-4 col-md-4">
+						<form:select class="form-control" path="subCategoryId" items="${subCategoryList}" itemValue="subCategoryId" itemLabel="subCategoryName"/>
+					</div>
+				</div>	  
+		  
+      <br>
+		 <div class="row">
+		  	<div class="col-sm-12 col-md-12">	
+		  		<div class="text-center">	
+					<input class="btn btn-success" type="submit" value="Add Brand" />
+				</div>
+				
+			</div>
+		 </div>	
+		
+		</form:form>
+ 	
+ 	</div>
 
-
-
-<title>BRAND  Page</title>
-</head>
-<body>
-<h1>Brand  Page</h1>
-<form:form modelAttribute="brand" action="addbrand">
-
-<form:input path="brandId" type="hidden" placeholder="Add brand Id" />
-<form:input path="brandName" placeholder="Add brand Name" />
-<form:errors path="brandName"></form:errors>
-
-<form:input path="brandDescription" placeholder="Add brand Description" />
-<form:errors path="brandDescription"></form:errors>
-
-
-<input type="Submit" value="Add Brand">
-
-
-
-</form:form>
 <br><br>
 <%-- <table  border= "1">
 	<tr>
@@ -62,40 +85,45 @@
 
  --%>
 <div ng-app="myApp">
-<input  type="text" ng-model="search" placeholder="search" />
-<br>
+ <div class="text-center">
+ 	<h1>Brand List</h1>
+ </div>
+ <div class="row">	
+ 	<div class="input-group col-xs-12 col-md-4 col-sm-4">	
+ 		<input class="form-control" type="text" ng-model="search" placeholder="search" />
+ 		
+ 	</div>
+ </div>
+ 
+ 
+ <br>
+ <div class="table-responsive">
  <table class="table" ng-controller="myController">
 <tr>
-<th>BrandId</th>
-<th>BrandName</th>
-<th>BrandDescription</th>
+<th>Name</th>
+<th>Description</th>
+<th>SubCategory</th>
 <th>Update </th>
 <th>Delete </th> 
 </tr>
-<tr ng-repeat="blist in myscope | filter:search">
-<td>{{blist.brandId}}</td>
-<td>{{blist.brandName}}</td>
-<td>{{blist.brandDescription}}</td>
-<td><a href="updateCategoryById-{{blist.brandId}}">Edit</a></td>
-<td><a href="deleteCategoryById-{{blist.brandId}}">Delete</a></td>
+
+<tr ng-repeat="bList in myscope | filter:search">
+<td>{{bList.brandName}}</td>
+<td>{{bList.brandDescription}}</td>
+<td>{{bList.subCategory.subCategoryName}}</td>
+<td><a href="updateBrandById-{{bList.brandId}}">Update</a></td>
+<td><a href="deleteBrandById-{{bList.brandId}}">Delete</a></td>
 </tr>
 </table>
 </div>
+ </div>
 
 
-
-  
-<script type="text/javascript" src="resources/js/jquery-3.1.1.min.js" ></script>
-<script type="text/javascript" src="resources/js/bootstrap.min.js" /></script>
-<script type="text/javascript" src="resources/js/angular.min.js"/></script>
- 
- <script>
+<script>
 var a=angular.module('myApp',[]);
 a.controller('myController', function($scope){
 $scope.myscope= ${brandListByJson}
 });
 </script>
 
-
-</body>
-</html>
+ 
