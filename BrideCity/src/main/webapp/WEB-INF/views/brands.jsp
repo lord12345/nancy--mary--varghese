@@ -1,4 +1,18 @@
  <%@ include file="header.jsp" %>
+<link rel="stylesheet" href="resources/css/error.css"/>
+<div class="container">
+ <div class="text-center">
+		<a href="categoryPage" class="btn btn-success" role="button">CATEGORY </a>
+		<a href="subCategoryPage" class="btn btn-info" role="button">SUBCATEGORY</a>
+		<a href="supplierPage" class="btn btn-success" role="button">SUPPLIER</a>
+		<a href="productPage" class="btn btn-info" role="button">PRODUCT</a>		
+		<a href="brandPage" class="btn btn-success" role="button">BRAND</a>
+	</div>
+	
+
+
+
+
 
  <div class="text-center">
  		<h1>Brand Form</h1>
@@ -58,32 +72,10 @@
  	</div>
 
 <br><br>
-<%-- <table  border= "1">
-	<tr>
-	    <th>Brand Id</th>
-		<th>Brand Name</th>
-		<th>Brand Description</th>
-		<th>Brand Edit</th>
-		<th>Brand Delete</th>
-	</tr>
+<br>
+<hr style="height:2px;border-width:0;color:red;background-color:red">
 
 
-	<c:forEach items="${brandList}" var="bList">
-		<tr>
-		
-		    <td>${bList.brandId}</td>
-			<td>${bList.brandName}</td>
-			<td>${bList.brandDescription}</td>
-			<td><a href="updateBrandById-${bList.brandId}">EDIT</a></td>
-			<td><a href="deleteBrandById-${bList.brandId}">DELETE</a></td>
-		</tr>
-	</c:forEach>
-
-</table>
-
-
-
- --%>
 <div ng-app="myApp">
  <div class="text-center">
  	<h1>Brand List</h1>
@@ -117,7 +109,7 @@
 </table>
 </div>
  </div>
-
+</div>
 
 <script>
 var a=angular.module('myApp',[]);

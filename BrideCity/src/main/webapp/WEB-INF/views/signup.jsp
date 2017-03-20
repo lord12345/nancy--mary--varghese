@@ -25,7 +25,7 @@
 <!-- <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1"> -->
 <!-- <meta name="viewport" content="width=device-width, initial-scale=1"> -->
 <!-- <link href="resources/css/bootstrap.min.css" rel="stylesheet" /> -->
- <link href="resources/css/registration.css" rel="stylesheet" /> 
+ <link href="resources/css/signup.css" rel="stylesheet" /> 
 
 
 <!-- <title>Insert title here</title> -->

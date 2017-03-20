@@ -53,7 +53,7 @@
       
       
        <div class="item">
-        <img src="resources/img/C12.jpg" alt="Flower" width="460" height="345">
+        <img src="resources/img/c5.jpg" alt="Flower" width="460" height="345">
           <div class="carousel-caption">
           <h3>Iris  Murdoch</h3>
           <p>Between  saying   and doing ,many  a  pair  of  shoes  is  worn out.</p>
@@ -61,7 +61,7 @@
         </div>
       
       <div class="item">
-        <img src="resources/img/C24.jpg" alt="Flower" width="460" height="345">
+        <img src="resources/img/c4.jpg" alt="Flower" width="460" height="345">
           <div class="carousel-caption">
           <h3>Marilyn</h3>
           <p>Give  a girl  the  right shoes,and  let  her  to  conquer the  world.</p>

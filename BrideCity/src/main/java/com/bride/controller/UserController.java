@@ -26,7 +26,7 @@ public class UserController
 	public String userRegistrationPage(Model model )
 	{
 		model.addAttribute("user", new User());
-		return "registration";
+		return "signup";
 	}
 		
 	@RequestMapping("/addUser")

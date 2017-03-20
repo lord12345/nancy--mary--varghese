@@ -1,5 +1,24 @@
 <%@ include file="header.jsp" %>
 
+<link rel="stylesheet" href="resources/css/error.css"/>
+
+<div class="container">
+ <div class="text-center">
+		<a href="categoryPage" class="btn btn-success" role="button">CATEGORY </a>
+		<a href="subCategoryPage" class="btn btn-info" role="button">SUBCATEGORY</a>
+		<a href="supplierPage" class="btn btn-success" role="button">SUPPLIER</a>
+		<a href="productPage" class="btn btn-info" role="button">PRODUCT</a>		
+		<a href="brandPage" class="btn btn-success" role="button">BRAND</a>
+	</div>
+	
+
+
+
+
+
+
+
+
 <div class="text-center">
 	 <h1>Supplier Form</h1>
  </div>
@@ -50,6 +69,12 @@
 </form:form>
  </div>
  
+ <br>
+<hr style="height:2px;border-width:0;color:red;background-color:red">
+
+ 
+ 
+ 
   <div ng-app="myApp">
  <div class="text-center">
  	<h1>Supplier List</h1>
@@ -84,7 +109,8 @@
 </tr>
 </table>
  </div>
-
+</div>
+</div>
 <script>
 var a=angular.module('myApp',[]);
 a.controller('myController', function($scope){
