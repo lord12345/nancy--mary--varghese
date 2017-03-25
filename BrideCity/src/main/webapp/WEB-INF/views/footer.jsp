@@ -1,4 +1,251 @@
-<%@ page language="java" contentType="text/html; charset=ISO-8859-1"
+
+<link rel="stylesheet" href="resources/css/footer.css"/>
+<link rel="stylesheet" href="resources/css/fonts.css"/>
+
+<link rel="stylesheet" href="resources/css/glyphicons.css"/>
+<footer>
+
+    <div class="footer" id="footer">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-2  col-md-2 col-sm-4 col-xs-6">
+                    <h3> Policy Information </h3>
+                    <ul>
+                        <li> <a href="#">About Us</a> </li>
+                        <li> <a href="#">Contact Us</a> </li>
+                        <li> <a href="#"> Privacy Policy </a> </li>
+                        <li> <a href="#">Terms  and Conditions </a> </li>
+                    </ul>
+                </div>
+                <div class="col-lg-2  col-md-2 col-sm-4 col-xs-6">
+                    <h3> Information Pages </h3>
+                    <ul>
+                        <li> <a href="#"> Payment FAQ's</a> </li>
+                        <li> <a href="#"> Order Cancellation Policy </a> </li>
+                        <li> <a href="#"> Shipping Policy </a> </li>
+                        <li> <a href="#"> Return  Policy </a> </li>
+                        <li> <a href="#"> Delivery Locations</a> </li>
+                    </ul>
+                </div>
+                <div class="col-lg-2  col-md-2 col-sm-4 col-xs-6">
+                    <h3> About  Our  Business </h3>
+                    <ul>
+                        <li> <a href="#"> Variety for A Better Life</a> </li>
+                        <li> <a href="#"> Low Price via Factory-Direct </a> </li>
+                        <li> <a href="#"> Estimated Delivery : 13 Days to 15 Days </a> </li>
+                        <li> <a href="#"> 100% Satisfaction Guaranteed </a> </li>
+                    </ul>
+                </div>
+                
+                 <div class="col-lg-2  col-md-2 col-sm-4 col-xs-6">
+                    <h3> Business  Motto</h3>
+                    <ul>
+                        <li> <a href="#"> 24/7 Availability </a> </li>
+                        <li> <a href="#"> Save Time </a> </li>
+                        <li> <a href="#"> Instant Satisfaction </a> </li>
+                        <li> <a href="#">  Save Energy </a> </li>
+                    </ul>
+                </div> 
+                
+                <div class="col-lg-3  col-md-3 col-sm-6 col-xs-12 ">
+                    <h3> Touch with BrideCity</h3>
+                    <ul>
+                        <li>
+                            <div class="input-append newsletter-box text-center">
+                                <input type="text" class="full text-center" placeholder="Email ">
+                                <button class="btn  bg-gray" type="button"> BrideCity<i class="fa fa-long-arrow-right"> </i> </button>
+                            </div>
+                        </li>
+                    </ul>
+                    <ul class="social">
+                        <li> <a href="#"> <i class="glyphicon glyphicon-facebook">   </i> </a> </li>
+                        <li> <a href="#"> <i class="fa fa-twitter">   </i> </a> </li>
+                        <li> <a href="#"> <i class="fa fa-google-plus">   </i> </a> </li>
+                        <li> <a href="#"> <i class="fa fa-pinterest">   </i> </a> </li>
+                        <li> <a href="#"> <i class="fa fa-youtube">   </i> </a> </li>
+                    </ul>
+                </div>
+            </div>
+            <!--/.row--> 
+        </div>
+        <!--/.container--> 
+    </div>
+    <!--/.footer-->
+    
+    <div class="footer-bottom">
+        <div class="container">
+            <p class="pull-left"> Copyright © Footer E-commerce Plugin 2014. All right reserved. </p>
+            <div class="pull-right">
+                <ul class="nav nav-pills payments">
+                	<li><i class="fa fa-cc-visa"></i></li>
+                    <li><i class="fa fa-cc-mastercard"></i></li>
+                    <li><i class="fa fa-cc-amex"></i></li>
+                    <li><i class="fa fa-cc-paypal"></i></li>
+                </ul> 
+            </div>
+        </div>
+    </div>
+    <!--/.footer-bottom--> 
+</footer>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!-- <footer
+
+id="colophon" class="site-footer" role="contentinfo"><div
+
+class="col-full"><div
+
+class="footer-widgets col-3 fix"><div
+
+class="block footer-widget-1"><div
+
+id="nav_menu-2" class="widget widget_nav_menu"><span
+
+class="gamma widget-title">Policy Information</span><div
+
+class="menu-policy-pages-container"><ul
+
+id="menu-policy-pages" class="menu"><li
+
+id="menu-item-9874" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-9874"><a
+
+href="#">About us</a></li><li
+
+id="menu-item-9875" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-9875"><a
+
+href="#">Contact us</a></li><li
+
+id="menu-item-9876" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-9876"><a
+
+href="#">Privacy Policy</a></li><li
+
+id="menu-item-9877" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-9877"><a
+
+href="#">Terms and Conditions</a></li></ul></div></div></div><div
+
+class="block footer-widget-2"><div
+
+id="nav_menu-3" class="widget widget_nav_menu"><span
+
+class="gamma widget-title">Information Pages</span><div
+
+class="menu-information-pages-container"><ul
+
+id="menu-information-pages" class="menu"><li
+
+id="menu-item-9869" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-9869"><a
+
+href="#">Payment FAQ&#8217;s</a></li><li
+
+id="menu-item-9868" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-9868"><a
+
+href="#">Order Cancellation Policy</a></li><li
+
+id="menu-item-9872" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-9872"><a
+
+href="#">Shipping policy</a></li><li
+
+id="menu-item-9871" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-9871"><a
+
+href="#">Return Policy</a></li><li
+
+id="menu-item-9878" class="menu-item menu-item-type-post_type menu-item-object-page current-menu-item page_item page-item-3362 current_page_item menu-item-9878"><a
+
+href="#">Delivery Locations</a></li></ul></div></div></div><div
+
+class="block footer-widget-3"><div
+
+id="black-studio-tinymce-9" class="widget widget_black_studio_tinymce"><span
+
+class="gamma widget-title">About our Business</span><div
+
+class="textwidget"><p><strong>Variety for A Better Life</strong></p><p><strong>Low Price via Factory-Direct</strong></p><p><strong>Estimated Delivery : 13 Days to 15 Days</strong></p><p><strong>100% Satisfaction Guaranteed</strong></p></div></div></div></div><div
+
+class="storefront-handheld-footer-bar"><ul
+
+class="columns-3"><li
+
+</div></div></li><li
+
+class="cart">
+
+<a
+
+class="footer-cart-contents" href="#" title="View your shopping cart">
+
+<span
+
+class="count">1</span>
+
+</a></li></ul></div></div>
+
+</footer></div>
+
+
+ -->
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<%-- <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
     pageEncoding="ISO-8859-1"%>
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
@@ -51,4 +298,4 @@ You can shop for your favourite products at BrideCity even on the go using Bride
 </div>
 
  </body>
-</html>
+</html> --%>

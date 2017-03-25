@@ -1,5 +1,6 @@
 <%@ include file="header.jsp" %>
  
+ <link rel="stylesheet" href="resources/css/error.css"/>
  
  
 <%--  <form:form class="form" modelAttribute="user" action="addUser">
@@ -50,8 +51,8 @@
 							<div class="cols-sm-10">
 								<div class="input-group">
 									<span class="input-group-addon"><i class="fa fa-user fa" aria-hidden="true"></i></span>
-									<%--  <input type="text" class="form-control" name="username" id="username" path="username" placeholder="Enter your Username"/>--%>
-								    <form:input class="form-control" path="username" placeholder="Enter EmailId" autofocus="true" /> 
+									<form:input class="form-control" path="username" placeholder="Enter EmailId" autofocus="true" /> 
+									<form:errors cssClass="error" path="username" />
 								</div>
 							</div>
 						</div>
@@ -61,8 +62,8 @@
 							<div class="cols-sm-10">
 								<div class="input-group">
 									<span class="input-group-addon"><i class="fa fa-envelope fa" aria-hidden="true"></i></span>
-									 <!-- <input type="password" class="form-control" name="password" id="password" path="password"  placeholder="Enter your Password"/>  -->
-								    <form:input class="form-control" type="password" path="password" placeholder="Password" />
+	                                <form:input class="form-control" type="password" path="password" placeholder="Password" />
+	                                <form:errors cssClass="error" path="password" />							
 								</div>
 							</div>
 						</div>
@@ -72,8 +73,8 @@
 							<div class="cols-sm-10">
 								<div class="input-group">
 									<span class="input-group-addon"><i class="fa fa-users fa" aria-hidden="true"></i></span>
-									<!-- <input type="text" class="form-control" name="fname" id="fname" path="fname" placeholder="Enter your Fname"/> -->
-								   <form:input class="form-control" path="fname" placeholder="First Name"/>
+									<form:input class="form-control" path="fname" placeholder="First Name"/>
+	                                 <form:errors cssClass="error" path="fname" />							
 								</div>
 							</div>
 						</div>
@@ -84,8 +85,8 @@
 							<div class="cols-sm-10">
 								<div class="input-group">
 									<span class="input-group-addon"><i class="fa fa-users fa" aria-hidden="true"></i></span>
-									<!-- <input type="text" class="form-control" name="lname" id="lname" path="lname" placeholder="Enter your Lname"/> -->
-								<form:input class="form-control" path="lname" placeholder="Last Name"/>   
+							        <form:input class="form-control" path="lname" placeholder="Last Name"/>   
+								    <form:errors cssClass="error" path="lname" />
 								</div>
 							</div>
 						</div>
@@ -99,9 +100,8 @@
 							<div class="cols-sm-10">
 								<div class="input-group">
 									<span class="input-group-addon"><i class="fa fa-lock fa-lg" aria-hidden="true"></i></span>
-									<!-- <input type="text" class="form-control" name="DOB" id="DOB" path="DOB" placeholder="Enter your DOB"/> -->
-						            <form:input class="form-control" path="DOB" placeholder="Date of Birth"/>
-						       
+		                            <form:input class="form-control" path="DOB" placeholder="Date of Birth"/>
+						             <form:errors cssClass="error" path="DOB" />
 						        </div>
                              </div>
                          </div>    
@@ -113,25 +113,26 @@
 							<div class="cols-sm-10">
 								<div class="input-group">
 									<span class="input-group-addon"><i class="fa fa-lock fa-lg" aria-hidden="true"></i></span>
-									<!-- <input type="text" class="form-control" name="contactNo" id="contactNo" path="contactNo" placeholder="Enter your Contact No"/> -->
-						        <form:input class="form-control" path="contactNo" placeholder="Contact Number"/>
+									<form:input class="form-control" path="contactNo" placeholder="Contact Number"/>
+		                             <form:errors cssClass="error" path="contactNo" />				        
 						        </div>
                              </div>
                          </div>    
                             
 						
 						
-						<div class="form-group">
+						<%-- <div class="form-group">
 							<label for="alternateContactNo" class="cols-sm-2 control-label">ALTERNATE  CONTACT NO</label>
 							<div class="cols-sm-10">
 								<div class="input-group">
 									<span class="input-group-addon"><i class="fa fa-lock fa-lg" aria-hidden="true"></i></span>
-									<!-- <input type="text" class="form-control" name="alternateContactNo" id="alternateContactNo" path="alternateContactNo" placeholder="Enter your AlternateContactNo"/> -->
-						           <form:input class="form-control" path="contactNo" placeholder="Contact Number"/>
-						        </div>
+					                <form:input class="form-control" path="alternateContactNo" placeholder="Alternate Contact Number"/>
+						           <form:errors cssClass="error" path="alternateContactNo" />	   
+	                            </div>
                              </div>
-                         </div>    
                             
+                         </div>    
+                            --%>
 						
 						
 						

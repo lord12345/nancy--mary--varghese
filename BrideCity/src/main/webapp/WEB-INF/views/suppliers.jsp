@@ -1,6 +1,6 @@
 <%@ include file="header.jsp" %>
-
 <link rel="stylesheet" href="resources/css/error.css"/>
+<link rel="stylesheet" href="resources/css/button.css"/>
 
 <div class="container">
  <div class="text-center">
@@ -87,7 +87,7 @@
  </div>
  
  
- 
+  
  
  <br>
  <div class="table-responsive">
@@ -96,16 +96,16 @@
 <th>Id</th>
 <th>Name</th>
 <th>Description</th>
-<th>Update Brand</th>
-<th>Delete Brand</th> 
+<th>Update </th>
+<th>Delete </th> 
 </tr>
-<tr ng-repeat="uList in myscope | filter:search">
+<tr ng-repeat="uList in myscope | filter:search  |orderBy:orderkeyword : orderflag ">
 <td>{{uList.supplierId}}</td>
 <td>{{uList.supplierName}}</td>
 <td>{{uList.supplierDescription}}</td>
 
-<td><a href="updateSupplierById-{{uList.supplierId}}">Update</a></td>
-<td><a href="deleteSupplierById-{{uList.supplierId}}">Delete</a></td>
+<td><a href="updateSupplierById-{{uList.supplierId}}" class="button button1">Update</a></td>
+<td><a href="deleteSupplierById-{{uList.supplierId}}" class="button button2">Delete</a></td>
 </tr>
 </table>
  </div>
@@ -114,7 +114,7 @@
 <script>
 var a=angular.module('myApp',[]);
 a.controller('myController', function($scope){
-$scope.myscope= ${SupListByJson}
+$scope.myscope= ${supListByJson}
 });
 </script>
  

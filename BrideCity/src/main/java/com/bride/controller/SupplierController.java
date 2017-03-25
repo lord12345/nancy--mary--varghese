@@ -25,8 +25,8 @@ public class SupplierController
 	public String getSupplierPage(Model model)
 	{
 		model.addAttribute("supplier",new Supplier());
-		model.addAttribute("SupList", supplierService.fetchAllSuppliers());
-		model.addAttribute("SupListByJson", supplierService.fetchAllSuppliersByJson());
+		model.addAttribute("supList", supplierService.fetchAllSuppliers());
+		model.addAttribute("supListByJson", supplierService.fetchAllSuppliersByJson());
 		return "suppliers";
 	}
 	
@@ -38,7 +38,7 @@ public class SupplierController
 		
 		if(result.hasErrors())
 		{
-			model.addAttribute("SupListByJson", supplierService.fetchAllSuppliersByJson());
+			model.addAttribute("supListByJson", supplierService.fetchAllSuppliersByJson());
 			return "suppliers";
 		}
 		
@@ -54,7 +54,7 @@ public class SupplierController
 	{
 		
 		model.addAttribute("supplier", supplierService.getSupplierById(supplierId));
-		model.addAttribute("SupListByJson", supplierService.fetchAllSuppliersByJson());
+		model.addAttribute("supListByJson", supplierService.fetchAllSuppliersByJson());
 		return "suppliers";
 	}
 	

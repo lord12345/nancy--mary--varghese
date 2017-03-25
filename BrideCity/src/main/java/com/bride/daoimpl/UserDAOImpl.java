@@ -1,5 +1,7 @@
 package com.bride.daoimpl;
 
+import java.util.List;
+
 import org.hibernate.Session;
 import org.hibernate.SessionFactory;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -22,8 +24,8 @@ public class UserDAOImpl  implements  UserDAO
 	{
 		Session session = sessionFactory.getCurrentSession();
 		
-		user.setEnabled(true);
-		user.setRole("ROLE_USER");
+		user.setEnabled(true);    //  setting  permanently
+		user.setRole("ROLE_USER");  //        "
 
 		session.saveOrUpdate(user);
 		
@@ -32,9 +34,20 @@ public class UserDAOImpl  implements  UserDAO
 		cart.setUserId(user.getUserId());
 		
 		session.saveOrUpdate(cart);
-		
 		session.saveOrUpdate(user);
 		
 		
+	}
+
+	public User getUserId(int userId) 
+	{
+		List<User> u = sessionFactory.getCurrentSession().createQuery("from User where userId = "+userId).getResultList();
+		return u.get(0);
+	}
+
+	public User getUserByusername(String username) 
+	{
+		List<User> userList = sessionFactory.getCurrentSession().createQuery("from User where username = "+"'"+username+"'").getResultList();		
+		return userList.get(0);
 	}
 }

@@ -8,7 +8,7 @@ body, html{
  	background-repeat: no-repeat;
  	background:url(https://i.ytimg.com/vi/4kfXjatgeEU/maxresdefault.jpg);
  	font-family: 'Oxygen', sans-serif;
-	    background-size: cover;
+	    background-size: ;
 }
 
 .main{
@@ -23,7 +23,7 @@ h1.title {
 
 hr{
 	width: 10%;
-	color: #db2440;
+	color: #e1689b;
 }
 
 .form-group{
@@ -41,7 +41,7 @@ input::-webkit-input-placeholder {
 }
 
 .main-login{
- 	background-color: #db2440;
+ 	background-color: #e1689b;
     /* shadows and rounded borders */
     -moz-border-radius: 2px;
     -webkit-border-radius: 2px;
@@ -64,8 +64,8 @@ padding: 8px 12px !important;
     border: 1px solid #ccc;
     margin-top: 28px;
     padding: 6px 12px;
-    color: #008040;
-    text-shadow: 0 1px #408080;
+    color: #f0b3cd;
+    text-shadow: 0 1px #bebe7e;
     cursor: pointer;
     -moz-border-radius: 3px 3px;
     -webkit-border-radius: 3px 3px;
@@ -73,7 +73,7 @@ padding: 8px 12px !important;
     -moz-box-shadow: 0 1px #fff inset, 0 1px #ddd;
     -webkit-box-shadow: 0 1px #fff inset, 0 1px #ddd;
     box-shadow: 0 1px #808040inset, 0 1px #ddd;
-    background: #808000;
+    background: #e1689b;
     background: -moz-linear-gradient(top, #808000 0%, #eeeeee 100%);
     background: -webkit-gradient(linear, left top, left bottom, color-stop(0%, #808000), color-stop(100%, #eeeeee));
     background: -webkit-linear-gradient(top, #808000 0%, #eeeeee 100%);
@@ -87,8 +87,8 @@ padding: 8px 12px !important;
  	margin: 0 auto;
  	max-width: 400px;
     padding: 10px 40px;
-	background:#db2440;
-	    color: #dead7c;
+	background:#e1689b;
+	    color: #e1689b;
     text-shadow: none;
 	-webkit-box-shadow: 0px 3px 5px 0px rgba(0,0,0,0.31);
 -moz-box-shadow: 0px 3px 5px 0px rgba(0,0,0,0.31);
@@ -96,7 +96,7 @@ box-shadow: 0px 3px 5px 0px rgba(0,0,0,0.31);
 
 }
 span.input-group-addon i {
-    color: #dead7c;
+    color: #e1689b;
     font-size: 17px;
 }
 

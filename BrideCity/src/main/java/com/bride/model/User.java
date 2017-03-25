@@ -5,6 +5,8 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 
+import org.hibernate.validator.constraints.NotEmpty;
+
 
 
 @Entity
@@ -15,16 +17,30 @@ public class User
 	@Id
 	@GeneratedValue(strategy=GenerationType.IDENTITY)
 	private int userId;
+	
+	
+	@NotEmpty(message="userName is required")
 	private String username; 
+	
+	@NotEmpty(message="password is required")
 	private String password; 
+	
 	private boolean enabled;
 	private String role;
-	
+
+	@NotEmpty(message="firstName is required")
 	private String fname;
+
+	@NotEmpty(message="lastName is required")
 	private String lname;
+
+	@NotEmpty(message="DOB is required")
 	private String DOB;
+
+	@NotEmpty(message="contactNo is required")
 	private String contactNo;
-	private String alternateContactNo;
+
+	
 	public int getUserId() 
 	{
 		return userId;
@@ -95,19 +111,5 @@ public class User
 	public void setContactNo(String contactNo) {
 		this.contactNo = contactNo;
 	}
-	public String getAlternateContactNo() {
-		return alternateContactNo;
-	}
-	public void setAlternateContactNo(String alternateContactNo) {
-		this.alternateContactNo = alternateContactNo;
-	}
-	
-	
-	
-	
-	
-	
-	
-	
 	
 }

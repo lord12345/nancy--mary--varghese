@@ -23,6 +23,8 @@ import com.bride.service.BrandService;
 import com.bride.service.CategoryService;
 import com.bride.service.SubCategoryService;
 import com.bride.service.SupplierService;
+import com.google.gson.Gson;
+import com.google.gson.GsonBuilder;
 
 
 @Controller
@@ -57,14 +59,14 @@ public class ProductController
 		model.addAttribute("categoryList", categoryService.fetchAllCategories());
 		model.addAttribute("subCategoryList", subCategoryService.fetchAllSubCategories());
 		model.addAttribute("brandList", brandService.fetchAllBrands());
-		model.addAttribute("supplierList", supplierService.fetchAllSuppliers());
+		model.addAttribute("supList", supplierService.fetchAllSuppliers());
 	    
 		
 		
 		model.addAttribute("productListByJson", productService.fetchAllProductsByJSON());
 		model.addAttribute("subCategoryListByJson", subCategoryService.fetchAllSubCategoriesByJson());
 		model.addAttribute("categoryListByJson", categoryService.fetchAllCategoriesByJson());
-		model.addAttribute("supplierListByJson", supplierService.fetchAllSuppliersByJson());
+		model.addAttribute("supListByJson", supplierService.fetchAllSuppliersByJson());
 		model.addAttribute("brandListByJson", brandService.fetchAllBrandsByJson());
 	
 		return "products";
@@ -83,12 +85,12 @@ public class ProductController
 			model.addAttribute("categoryList", categoryService.fetchAllCategories());
 			model.addAttribute("subCategoryList", subCategoryService.fetchAllSubCategories());
 			model.addAttribute("brandList", brandService.fetchAllBrands());
-			model.addAttribute("supplierList", supplierService.fetchAllSuppliers());
+			model.addAttribute("supList", supplierService.fetchAllSuppliers());
 			
 			model.addAttribute("productListByJson", productService.fetchAllProductsByJSON());
 			model.addAttribute("subCategoryListByJson", subCategoryService.fetchAllSubCategoriesByJson());
 			model.addAttribute("categoryListByJson", categoryService.fetchAllCategoriesByJson());
-			model.addAttribute("supplierListByJson", supplierService.fetchAllSuppliersByJson());
+			model.addAttribute("supListByJson", supplierService.fetchAllSuppliersByJson());
 			model.addAttribute("brandListByJson", brandService.fetchAllBrandsByJson());
 			
 			
@@ -144,7 +146,7 @@ product.getProductId() + ".jpg");
 		model.addAttribute("productList", productService.fetchAllProducts());
 		model.addAttribute("subCategoryList", subCategoryService.fetchAllSubCategories());
 		model.addAttribute("brandList", brandService.fetchAllBrands());
-		model.addAttribute("supplierList", supplierService.fetchAllSuppliers());
+		model.addAttribute("supList", supplierService.fetchAllSuppliers());
 		
 		
 		
@@ -152,14 +154,12 @@ product.getProductId() + ".jpg");
 		model.addAttribute("productListByJson", productService.fetchAllProductsByJSON());
 		model.addAttribute("subCategoryListByJson", subCategoryService.fetchAllSubCategoriesByJson());
 		model.addAttribute("categoryListByJson", categoryService.fetchAllCategoriesByJson());
-		model.addAttribute("supplierListByJson", supplierService.fetchAllSuppliersByJson());
+		model.addAttribute("supListByJson", supplierService.fetchAllSuppliersByJson());
 		model.addAttribute("brandListByJson", brandService.fetchAllBrandsByJson());
 		
 		
 	    return "products";
 	}
-	
-	
 	
 	
 	@RequestMapping("/deleteProductById-{productId}")
@@ -182,7 +182,23 @@ product.getProductId() + ".jpg");
 		return "redirect:/productPage";
 	}
 	
+	@RequestMapping("/viewProductById-{productId}")
+	public String viewProduct(Model model,@PathVariable("productId") int productId)
+	{
+		Product p = productService.getProductById(productId);
+		Gson g = new GsonBuilder().excludeFieldsWithoutExposeAnnotation().create();
+		
+		String productData= g.toJson(p);
+		
+		model.addAttribute("productData", productData);
+		
+	    model.addAttribute("productListByJson", productService.fetchAllProductsByJSON());
+		model.addAttribute("subCategoryListByJson", subCategoryService.fetchAllSubCategoriesByJson());
+		model.addAttribute("categoryListByJson", categoryService.fetchAllCategoriesByJson());
+		model.addAttribute("supListByJson", supplierService.fetchAllSuppliersByJson());
+		model.addAttribute("brandListByJson", brandService.fetchAllBrandsByJson());
 	
-	
+		return "viewproduct";
+	}
 }
 

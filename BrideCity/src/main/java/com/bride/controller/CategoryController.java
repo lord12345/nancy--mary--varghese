@@ -57,6 +57,11 @@ public class CategoryController
 		return "categories";
 	}
 	
+	
+	
+	
+	
+	
 	@RequestMapping("/deleteCategoryById-{categoryId}")
 	public String deleteCategory(@PathVariable("categoryId") int categoryId)
 	{

@@ -17,6 +17,7 @@ public interface CategoryDAO
 	
 	public String fetchAllCategoriesByJson();
 	
+   	
 	public Category getCategoryById(int categoryId);
 
 	public void deleteCategory(int categoryId);

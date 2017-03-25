@@ -1,6 +1,6 @@
 <%@ include file="header.jsp" %>
 <link rel="stylesheet" href="resources/css/error.css"/>
-
+<link rel="stylesheet" href="resources/css/button.css"/>
 <div class="container"> 
 	<div class="text-center">
 		<a href="categoryPage" class="btn btn-success" role="button">CATEGORY </a>
@@ -10,18 +10,10 @@
 		<a href="brandPage" class="btn btn-success" role="button">BRAND</a>
 	</div>
 
-
-
-
-
-
 <div class="text-center">
  		<h1>SubCategory Form</h1>
 </div>
  	
- 	
- 	
- 	<br>
  	
  <div class="form">
 		
@@ -108,12 +100,12 @@
 <th>Update SubCategory</th>
 <th>Delete SubCategory</th> 
 </tr>
-<tr ng-repeat="sList in myscope | filter:search">
+<tr ng-repeat="sList in myscope | filter:search |orderBy:orderkeyword : orderflag ">
 <td>{{sList.subCategoryName}}</td>
 <td>{{sList.subCategoryDescription}}</td>
 <td>{{sList.category.categoryName}}</td>
-<td><a href="updateSubCategoryById-{{sList.subCategoryId}}">Update</a></td>
-<td><a href="deleteSubCategoryById-{{sList.subCategoryId}}">Delete</a></td>
+<td><a href="updateSubCategoryById-{{sList.subCategoryId}}" class="button button1">Update</a></td>
+<td><a href="deleteSubCategoryById-{{sList.subCategoryId}}" class="button button2">Delete</a></td>
 </tr>
 </table>
  </div>

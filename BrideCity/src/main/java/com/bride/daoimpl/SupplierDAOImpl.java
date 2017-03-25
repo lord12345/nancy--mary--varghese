@@ -19,7 +19,7 @@ public class SupplierDAOImpl implements SupplierDAO
 	
 	
 	@Autowired
-	SessionFactory sessionFactory;
+	SessionFactory sessionFactory;                                                                                                                                                                                                                           
 
 	public void addSupplier(Supplier supplier) 
 	{
@@ -29,16 +29,16 @@ public class SupplierDAOImpl implements SupplierDAO
 	
 	public List<Supplier> fetchAllSuppliers()
 	{
-		 List<Supplier> SupList = sessionFactory.getCurrentSession().createQuery("from Supplier").getResultList();
-		return SupList;
+		 List<Supplier> supList = sessionFactory.getCurrentSession().createQuery("from Supplier").getResultList();
+		return supList;
 
     }
 
 	
 	public String fetchAllSuppliersByJson() {
-		List<Supplier> SupList = sessionFactory.getCurrentSession().createQuery("from Supplier").getResultList();
+		List<Supplier> supList = sessionFactory.getCurrentSession().createQuery("from Supplier").getResultList();
 		Gson g = new Gson();
-		String list = g.toJson(SupList);
+		String list = g.toJson(supList);
 		return list;
 	}
 	

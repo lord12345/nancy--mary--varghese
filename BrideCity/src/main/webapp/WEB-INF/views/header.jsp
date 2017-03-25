@@ -1,6 +1,12 @@
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
     pageEncoding="ISO-8859-1"  isELIgnored="false"%>
     
+    
+    <%@taglib prefix="sec" uri="http://www.springframework.org/security/tags" %>
+  
+  
+  
+  
    <%@taglib prefix="form" uri="http://www.springframework.org/tags/form"%>
    <%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
     <%@ taglib prefix="security" uri="http://www.springframework.org/security/tags"%>
@@ -70,9 +76,8 @@
       </button>
       <a class="navbar-brand" href="#">BrideCity</a>
     </div>
-
-    <!-- Collect the nav links, forms, and other content for toggling -->
-    <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+<!-- Collect the nav links, forms, and other content for toggling -->
+ <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
       <ul class="nav navbar-nav">
         <!-- <li class="active"><a href="#">Link <span class="sr-only">(current)</span></a></li>
          -->
@@ -96,23 +101,45 @@
         <button type="submit" class="btn btn-default">Submit</button>
       </form>
       <ul class="nav navbar-nav navbar-right">
-      
-        <li><a href="#">Contact Us</a></li>
+     <li><a href="#">Contact Us</a></li>
         <li><a href="#"><span class="glyphicon glyphicon-shopping-cart"></span> Cart</a></li> 
-        
         <li>
-        <!-- <a href="#" style="space-top: 10px; color: #fff;">Welcome,  -->
+        <a href="#" style="space-top:10px;color:blue;">
     	   <security:authorize access="isAuthenticated()">
    	       <security:authentication property="principal.username" /> 
 	       </security:authorize> 
-        <li><a href="registrationPage"><span class="glyphicon glyphicon-user"></span> Sign Up</a></li>
+	  </a></li>
+	  
+	      <c:if test="${pageContext.request.userPrincipal.name == null}"> 
+       <li><a href="registrationPage"><span class="glyphicon glyphicon-user"></span> Sign Up</a></li>
+          </c:if>
+        
+          <c:if test="${pageContext.request.userPrincipal.name == null}">    
         <li><a href="login"><span class="glyphicon glyphicon-log-in"></span> Login</a></li>
+          </c:if>
+        
+        
+       <c:if test="${pageContext.request.userPrincipal.name != null}">
         <li><a href="logout"><span class="glyphicon glyphicon-log-out"></span> Logout</a></li>
-        
-        </a></li>
-        
+        </c:if>
         
         
+      
+        
+        <sec:authorize access="hasRole('ROLE_ADMIN')">
+        <li class="dropdown">
+          <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">ADMINPANEL<span class="caret"></span></a>
+          <ul class="dropdown-menu">
+            <li><a href="categoryPage">CATEGORY</a></li>
+            <li><a href="subCategoryPage">SUBCATEGORY</a></li>
+            <li><a href="productPage">PRODUCT</a></li>
+            <li><a href="brandPage">BRAND</a></li>
+            <li><a href="supplierPage">SUPPLIER</a></li>
+            <li><a href="#">USER MANAGEMENT</a></li>
+            
+          </ul>
+        </li>
+        </sec:authorize>
       </ul>
     </div><!-- /.navbar-collapse -->
   </div><!-- /.container-fluid -->

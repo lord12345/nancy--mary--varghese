@@ -1,5 +1,6 @@
  <%@ include file="header.jsp" %>
 <link rel="stylesheet" href="resources/css/error.css"/>
+<link rel="stylesheet" href="resources/css/button.css"/>
 <div class="container">
  <div class="text-center">
 		<a href="categoryPage" class="btn btn-success" role="button">CATEGORY </a>
@@ -99,12 +100,12 @@
 <th>Delete </th> 
 </tr>
 
-<tr ng-repeat="bList in myscope | filter:search">
+<tr ng-repeat="bList in myscope | filter:search |orderBy:orderkeyword : orderflag ">
 <td>{{bList.brandName}}</td>
 <td>{{bList.brandDescription}}</td>
 <td>{{bList.subCategory.subCategoryName}}</td>
-<td><a href="updateBrandById-{{bList.brandId}}">Update</a></td>
-<td><a href="deleteBrandById-{{bList.brandId}}">Delete</a></td>
+<td><a href="updateBrandById-{{bList.brandId}}" class="button button1">Update</a></td>
+<td><a href="deleteBrandById-{{bList.brandId}}" class="button button2">Delete</a></td>
 </tr>
 </table>
 </div>

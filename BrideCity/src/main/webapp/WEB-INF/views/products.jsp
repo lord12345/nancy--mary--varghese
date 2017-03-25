@@ -1,4 +1,5 @@
 <%@ include file="header.jsp" %>
+<link rel="stylesheet" href="resources/css/button.css"/>
 <link rel="stylesheet" href="resources/css/error.css"/>
 <div class="container">
  <div class="text-center">
@@ -107,7 +108,7 @@
 				<form:label path="supplierId">Select Supplier of Product</form:label>
 			</div>
 			<div class="col-xs-12 col-sm-4 col-md-4">
-				<form:select class="form-control" path="supplierId" items="${supplierList}" itemValue="supplierId" itemLabel="supplierName"/>
+				<form:select class="form-control" path="supplierId" items="${supList}" itemValue="supplierId" itemLabel="supplierName"/>
 			</div>
 		</div>
 		
@@ -150,21 +151,21 @@
 <th>Description</th>
 <th>Actual Price</th>
 <th>Discount</th>
-
 <th>Category</th>
 <th>SubCategory</th>
 <th>Brand</th>
 <th>Supplier</th>
-<th>Product Image</th>
-<th>Update Product</th>
-<th>Delete Product</th> 
+<th>ProductImage</th>
+<th>Update</th>
+<th>Delete</th> 
+<th>View</th>
 </tr>
-<tr ng-repeat="pList in myscope | filter:search ">
+<tr ng-repeat="pList in myscope | filter:search |orderBy:orderkeyword : orderflag ">
+
 <td>{{pList.productName}}</td>
 <td>{{pList.productDescription}}</td>
 <td>{{pList.productActualPrice}}</td>
 <td>{{pList.productDiscount}}</td>
-
 <td>{{pList.category.categoryName}}</td>
 <td>{{pList.subCategory.subCategoryName}}</td>
 <td>{{pList.brand.brandName}}</td>
@@ -174,8 +175,9 @@
 <td><img src="resources/data/productImage-{{pList.productId}}.jpg" height="100px" width="100px" alt="img not uploaded"/></td>
 			
 
-<td><a href="updateProductById-{{pList.productId}}" >Update</a></td>
-<td><a href="deleteProductById-{{pList.productId}}" >Delete</a></td>  
+<td><a href="updateProductById-{{pList.productId}}"class="button button1">U</a></td>
+<td><a href="deleteProductById-{{pList.productId}}"class="button button2">D</a></td>  
+<td><a href="viewProductById-{{pList.productId}}"class="button button3">V</a></td>  
 </tr>
 </table>
 </div>

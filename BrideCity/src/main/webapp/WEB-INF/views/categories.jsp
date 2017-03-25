@@ -1,5 +1,6 @@
 <%@ include file="header.jsp" %>
 <link rel="stylesheet" href="resources/css/error.css"/>
+<link rel="stylesheet" href="resources/css/button.css"/>
 
 <div class="container">
 	<div class="text-center"> 
@@ -81,12 +82,13 @@
 <th>Update Category</th>
 <th>Delete Category</th> 
 </tr>
-<tr ng-repeat="clist in myscope | filter:search">
+<tr ng-repeat="clist in myscope | filter:search |orderBy:orderkeyword : orderflag ">
 <td>{{clist.categoryId}}</td>
 <td>{{clist.categoryName}}</td>
 <td>{{clist.categoryDescription}}</td>
-<td><a href="updateCategoryById-{{clist.categoryId}}">Update</a></td>
-<td><a href="deleteCategoryById-{{clist.categoryId}}">Delete</a></td>
+<td><a href="updateCategoryById-{{clist.categoryId}}" class="button button1"> Update</a></td>
+<td><a href="deleteCategoryById-{{clist.categoryId}}" class="button button2"> Delete</a></td>
+
 </tr>
 </table>
 </div>

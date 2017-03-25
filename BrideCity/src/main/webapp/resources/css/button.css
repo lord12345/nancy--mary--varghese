@@ -1,4 +1,4 @@
-body { padding-top: 60px; } 
+/* body { padding-top: 60px; }  */
 .dropbtn {
    
     color: white;
@@ -13,6 +13,46 @@ body { padding-top: 60px; }
     display: inline-block;
 }
 
+.button1 {
+    background-color: #74743a; /* Green */
+    border: none;
+    color: white;
+    padding: 10px 20px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 13px;
+   /*  margin: 3px 1px; */
+    cursor: pointer;
+}
+
+.button2 {
+    background-color: #f4007a; /* Green */
+    border: none;
+    color: white;
+    padding: 10px 20px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 13px;
+   /*  margin: 3px 1px; */
+    cursor: pointer;
+}
+.button3 {
+    background-color: #408080; /* Green */
+    border: none;
+    color: white;
+    padding: 10px 20px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 13px;
+   /*  margin: 3px 1px; */
+    cursor: pointer;
+}
+.button1 {border-radius:50%;}
+.button2 {border-radius:50%;}
+.button3 {border-radius:50%;}
 .dropdown-content {
     display: none;
     position: absolute;
@@ -34,7 +74,19 @@ body { padding-top: 60px; }
 .dropdown:hover .dropdown-content {
     display: block;
 }
-
-/* .dropdown:hover .dropbtn {
-    background-color: #3e8e41;
+/* .button1 {
+    background-color: #74743a; Green
+    border: none;
+    color: white;
+    padding: 15px 32px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    margin: 4px 2px;
+    cursor: pointer;
 } */
+
+.dropdown:hover .dropbtn {
+    background-color: #3e8e41;
+} 
