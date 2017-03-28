@@ -118,7 +118,7 @@ a.controller('myController', function($scope){
 $scope.myscope= ${subCategoryListByJson}
 });
 </script>
-
+<%@ include file="footer.jsp" %>
 
 
 

@@ -102,7 +102,7 @@ $scope.myscope= ${categoryListByJson}
 });
 </script> 
 
-
+<%@ include file="footer.jsp" %>
 
 
   

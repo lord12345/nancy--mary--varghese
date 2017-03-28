@@ -7,14 +7,20 @@
 	clear: both;
 	display: block;
 }
+
+
+
+
+
 .footer {
-	background: #ffbe7d;
+	background-image:url("p2.jpg");
+	/* background: #ffbe7d; */
 	height: auto;
 	padding-bottom: 30px;
 	position: relative;
 	width: 100%;
-	border-bottom: 1px solid #408080;
-	border-top: 1px solid #808000;
+	border-bottom: 1px solid #8000ff;
+	border-top: 1px solid #ff0080;
 }
 .footer p {
 	margin: 0;
@@ -37,14 +43,14 @@
 	margin-left: 0;
 	padding-left: 0;
 	margin-top: 15px;
-	color: #008000;
+	color: #0000ff;
 }
 .footer ul li a {
 	padding: 0 0 5px 0;
 	display: block;
 }
 .footer a {
-	color: #78828D
+	color: #0000ff
 }
 .supportLi h4 {
 	font-size: 20px;
@@ -82,7 +88,7 @@
 	box-shadow: 0 1px 0 #00ffff;
 }
 .social li {
-	background: none repeat scroll 0 0 #B5B5B5;
+	background: none repeat scroll 0 0 #ff8000;
 	border: 2px solid #ff00ff;
 	-webkit-border-radius: 50%;
 	-moz-border-radius: 50%;
@@ -119,7 +125,7 @@
 .social li a i {
 	font-size: 16px;
 	margin: 0 0 0 5px;
-	color: #adad5a!important;
+	color: #0000ff!important;
 }
 .footer-bottom {
 	background: #bb7777;
@@ -131,5 +137,6 @@
 	padding-top: 6px;
 }
 .payments {
-	font-size: 1.5em;	
+	font-size: 3em;	
+	color: #ffff00;
 }

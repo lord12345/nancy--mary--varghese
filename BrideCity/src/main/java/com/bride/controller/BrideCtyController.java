@@ -21,20 +21,59 @@ public class BrideCtyController
 	
 	@Autowired
 	SubCategoryService subCategoryService;
-	/*@RequestMapping("/Login")
-	public String getLogin()
+	
+	@RequestMapping("/aboutus")
+	public String getAboutUs()
 	{
-		return "login";
+		return "aboutus";
+	}
+	
+	@RequestMapping("/payment")
+	public String getPayment()
+	{
+		return "paymentfaqs";
+	}
+	
+	@RequestMapping("/contactus")
+	public String getContact()
+	{
+		return "contactus";
 	}
 	
 	
-	@RequestMapping("/registration")
-	public String getSignUp()
+	
+	
+	@RequestMapping("/order")
+	public String getOrder()
 	{
-		return "registration";
-	}*/
+		return "ordercancellation";
+	}
+	
+	@RequestMapping("/shippingpolicy")
+	public String getShippingpolicy()
+	{
+		return "shippingpolicy";
+	}
+	
+	@RequestMapping("/privacypolicy")
+	public String getPrivacypolicy()
+	{
+		return "privacypolicy";
+	}
+	
+	@RequestMapping("/terms")
+	public String getTerms()
+	{
+		return "terms";
+	}
 	
 	
+	
+	@RequestMapping("/returnpolicy")
+	public String getReturnpolicy()
+	{
+		return "returnpolicy";
+	}
 	
 	@RequestMapping("/")
 	

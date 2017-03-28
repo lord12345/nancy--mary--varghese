@@ -118,5 +118,5 @@ a.controller('myController', function($scope){
 $scope.myscope= ${brandListByJson}
 });
 </script>
-
+<%@ include file="footer.jsp" %>
  

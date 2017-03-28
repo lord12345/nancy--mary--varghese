@@ -118,7 +118,7 @@ $scope.myscope= ${supListByJson}
 });
 </script>
  
- 
+ <%@ include file="footer.jsp" %>
  
  
  

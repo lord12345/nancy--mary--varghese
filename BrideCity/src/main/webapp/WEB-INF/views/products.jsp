@@ -193,17 +193,6 @@ $scope.myscope= ${productListByJson}
 </script>
 
 
-
-
-
-
-
-
-
-
-
-
-
-
+<%@ include file="footer.jsp" %>
 
 

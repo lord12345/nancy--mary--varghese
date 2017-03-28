@@ -26,7 +26,7 @@
       </div>
         
         <div class="item">
-        <img src="resources/img/S4.jpg" alt="Flower" width="460" height="345">
+        <img src="resources/img/sliderpic2.jpg" alt="Flower" width="460" height="345">
           <div class="carousel-caption">
           <h3>DreamDay</h3>
           <p>Enjoy  the   beauty  of  Life.</p>
@@ -34,7 +34,7 @@
         </div>
 
         <div class="item">
-        <img src="resources/img/b7.jpg" alt="Flower" width="460" height="345">
+        <img src="resources/img/sliserpic.jpg" alt="Flower" width="460" height="345">
           <div class="carousel-caption">
           <h3>Timeless  Fashion</h3>
           <p>Elegant  Style.</p>

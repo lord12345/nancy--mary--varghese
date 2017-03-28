@@ -65,6 +65,7 @@
 
 </div> --%>
 <nav class="navbar navbar-transparent">
+  
   <div class="container-fluid">
     <!-- Brand and toggle get grouped for better mobile display -->
     <div class="navbar-header">
@@ -82,17 +83,40 @@
         <!-- <li class="active"><a href="#">Link <span class="sr-only">(current)</span></a></li>
          -->
         <li class="dropdown">
-          <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Dropdown <span class="caret"></span></a>
+          <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false"> GOWNS<span class="caret"></span></a>
           <ul class="dropdown-menu">
-            <li><a href="#">Action</a></li>
-            <li><a href="#">Another action</a></li>
-            <li><a href="#">Something else here</a></li>
-            <li role="separator" class="divider"></li>
-            <li><a href="#">Separated link</a></li>
-            <li role="separator" class="divider"></li>
-            <li><a href="#">One more separated link</a></li>
+            <li><a href="#">Sleeve</a></li>
+            <li><a href="#">Sleeveless</a></li>
+            <li><a href="#">ShoulderOff</a></li>
+            
           </ul>
         </li>
+         <li class="dropdown">
+          <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">FOOTWEARS <span class="caret"></span></a>
+          <ul class="dropdown-menu">
+            <li><a href="#">Heels</a></li>
+            <li><a href="#">Wedges</a></li>
+            <li><a href="#">Flats</a></li>
+            
+          </ul>
+        </li>
+        <li class="dropdown">
+          <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">BOUQUETS <span class="caret"></span></a>
+          <ul class="dropdown-menu">
+            <li><a href="#">Red</a></li>
+            <li><a href="#">Blue</a></li>
+            <li><a href="#">White & Golden</a></li>
+            <!-- <li role="separator" class="divider"></li>
+            <li><a href="#">Separated link</a></li>
+            <li role="separator" class="divider"></li>
+            <li><a href="#">One more separated link</a></li> -->
+          </ul>
+        </li>
+        
+        
+        
+        
+        
       </ul>
       <form class="navbar-form navbar-left">
         <div class="form-group">
@@ -101,7 +125,7 @@
         <button type="submit" class="btn btn-default">Submit</button>
       </form>
       <ul class="nav navbar-nav navbar-right">
-     <li><a href="#">Contact Us</a></li>
+     
         <li><a href="#"><span class="glyphicon glyphicon-shopping-cart"></span> Cart</a></li> 
         <li>
         <a href="#" style="space-top:10px;color:blue;">
