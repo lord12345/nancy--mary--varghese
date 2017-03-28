@@ -204,18 +204,19 @@ product.getProductId() + ".jpg");
 	                     /////////////////////RRRRRRRR//////////////////////
 	
 	
-	@RequestMapping("/productdisplay")
+	/*@RequestMapping("/productdisplay")
 	public String getProductDisplay(Model model) 
 	{
 		return "main-productdisplay";
 	}
+	
 	
 	@RequestMapping("/toggleproduct-{productId}")
 	public String toggleDisabled(@PathVariable("productId") int productId)
 	{
 		productService.toggleProduct(productId);		
 		return "redirect:/productPage";
-	}
+	}*/
 
 }
 

@@ -34,6 +34,8 @@ public class CartItems
 	@Expose
 	private double amount;
 	
+	@Expose
+	private int discount;
 	
 	@DateTimeFormat(pattern=" yyyy-MM-dd'T'hh:mm:ss.SSSZ")
 	private Date dateOrdered;
@@ -53,6 +55,14 @@ public class CartItems
 	private Cart cart;
 
 	
+
+	public int getDiscount() {
+		return discount;
+	}
+
+	public void setDiscount(int discount) {
+		this.discount = discount;
+	}
 
 	public int getProductId() {
 		return productId;

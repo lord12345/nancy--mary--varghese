@@ -34,7 +34,7 @@
 <span style="color:green">{{myScope.productDiscount}}% off</span></h4>
 <h4><b>By: </b><span style="color:blue">{{myScope.supplier.supplierName}}</span></h4>
 
-<a href ="#" class="button button1" data-toggle="tooltip" title="Add To WishList"><i class="glyphicon glyphicon-heart"></i></a>
+<a href ="addtowish-{{myScope.productId}}" class="button button1" data-toggle="tooltip" title="Add To WishList"><i class="glyphicon glyphicon-heart"></i></a>
 <a href="addtocart-{{myScope.productId}}" class="button button2" data-toggle="tooltip" title="Add To Cart"><i class="glyphicon glyphicon-shopping-cart"></i></a>
 <a href="#" class="button button3" data-toggle="tooltip" title="Buy Now"><i class="glyphicon glyphicon-ok"></i></a>
 
@@ -53,3 +53,6 @@
 			$scope.myScope=${productData};
 			});
     </script>
+    
+    
+ <%@ include file="footer.jsp" %>   

@@ -32,14 +32,14 @@ public class CartItemsController
 	private ProductService  productService;
 	
 	
-	@RequestMapping("/usercart")
+	@RequestMapping("/cartlist")
 	public String getCart(Principal l,Model model)
 	
 	{
 		
 		int userId = userService.getUserByusername(l.getName()).getUserId();		
 		model.addAttribute("cartItemsListJSON", cartItemsService.fetchAllItemsByUserIdJSON(userId));
-        return "usercart";                    
+        return "cartlist";                    
 	}
 	
 	
@@ -55,12 +55,19 @@ public class CartItemsController
 		cartItems.setUserId(userId);
 		cartItems.setCartId(userId);
 
+		
+		
+	        	
 		String pName = productService.getProductById(productId).getProductName();
 		int price = productService.getProductById(productId).getProductActualPrice();
-
-		cartItems.setProductName(pName);
+        int discount = productService.getProductById(productId).getProductDiscount();
+		
+        
+        
+        cartItems.setProductName(pName);
 		cartItems.setRate(price);
 		cartItems.setQuantity(1);
+		cartItems.setDiscount(discount);
 		cartItems.setAmount(cartItems.getQuantity() * cartItems.getRate());
 
 		Date d = new Date();
@@ -71,7 +78,7 @@ public class CartItemsController
 
 		cartItemsService.addToCart(cartItems);
 
-		return "redirect:/usercart";                        
+		return "redirect:/cartlist";                        
 	}
    	
 	
@@ -86,7 +93,7 @@ public class CartItemsController
 		{
 			cartItemsService.deleteItem(cartItemId);
 			model.addAttribute("commonmessage", "Removed From Cart");
-			return "redirect:/usercart";
+			return "redirect:/cartlist";
 		}
 		else
 		{
@@ -117,11 +124,11 @@ public class CartItemsController
 			cartItemsService.addToCart(thisItem);
 			
 			model.addAttribute("commonmessage", "Removed From Cart");
-			return "redirect:/usercart";
+			return "redirect:/cartlist";
 			}
 			
 			model.addAttribute("commonmessage", "Operation Interrupted");
-			return "redirect:/usercart";
+			return "redirect:/cartlist";
 		}
 		else
 		{

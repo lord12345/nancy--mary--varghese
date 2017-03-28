@@ -14,51 +14,45 @@ import org.springframework.format.annotation.DateTimeFormat;
 import com.google.gson.annotations.Expose;
 
 @Entity
-public class WishList 
+public class WishItems 
 {
      
 	@Id
 	@GeneratedValue(strategy=GenerationType.IDENTITY)
-	
 	@Expose
-	private  int  cartItemId;
-	
+	private int wishItemId;
 	@Expose
 	private  int  productId;
-	
 	@Expose
 	private String productName;
-	
-	@Expose
-	private  int  rate;
-	
 	@Expose
 	private int quantity;
-	
+	@Expose
+	private int rate;
 	@Expose
 	private double amount;
 	
-	@DateTimeFormat(pattern="yyyy-MM-dd'T'hh:mm:ss.SSSZ")
+	@Expose
+	private int discount;
+	
+	@DateTimeFormat(pattern=" yyyy-MM-dd'T'hh:mm:ss.SSSZ")
 	private Date dateOrdered;
 	
 	
-	private int cartId;
+	
+	
 	private int userId;
 
 	@ManyToOne
 	@JoinColumn(name="userId", nullable=false , updatable=false , insertable=false )
 	private User user;
 
-	@ManyToOne
-	@JoinColumn(name="cartId", nullable=false , updatable=false , insertable=false )
-	private Cart cart;
-
-	public int getCartItemId() {
-		return cartItemId;
+	public int getWishItemId() {
+		return wishItemId;
 	}
 
-	public void setCartItemId(int cartItemId) {
-		this.cartItemId = cartItemId;
+	public void setWishItemId(int wishItemId) {
+		this.wishItemId = wishItemId;
 	}
 
 	public int getProductId() {
@@ -77,20 +71,20 @@ public class WishList
 		this.productName = productName;
 	}
 
-	public int getRate() {
-		return rate;
-	}
-
-	public void setRate(int rate) {
-		this.rate = rate;
-	}
-
 	public int getQuantity() {
 		return quantity;
 	}
 
 	public void setQuantity(int quantity) {
 		this.quantity = quantity;
+	}
+
+	public int getRate() {
+		return rate;
+	}
+
+	public void setRate(int rate) {
+		this.rate = rate;
 	}
 
 	public double getAmount() {
@@ -101,20 +95,20 @@ public class WishList
 		this.amount = amount;
 	}
 
+	public int getDiscount() {
+		return discount;
+	}
+
+	public void setDiscount(int discount) {
+		this.discount = discount;
+	}
+
 	public Date getDateOrdered() {
 		return dateOrdered;
 	}
 
 	public void setDateOrdered(Date dateOrdered) {
 		this.dateOrdered = dateOrdered;
-	}
-
-	public int getCartId() {
-		return cartId;
-	}
-
-	public void setCartId(int cartId) {
-		this.cartId = cartId;
 	}
 
 	public int getUserId() {
@@ -133,12 +127,5 @@ public class WishList
 		this.user = user;
 	}
 
-	public Cart getCart() {
-		return cart;
-	}
-
-	public void setCart(Cart cart) {
-		this.cart = cart;
-	}
 	
 }

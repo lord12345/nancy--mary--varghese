@@ -39,7 +39,7 @@ return   cartItemsDAOImpl.fetchOneItem(cartItemId);
 public void deleteItem(int cartItemId)
 {
 
-
+	cartItemsDAOImpl.deleteItem(cartItemId);
 }
 
 

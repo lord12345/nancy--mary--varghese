@@ -56,56 +56,9 @@
 			
 </script>
 
+<%@ include file="footer.jsp" %>
 
 
 
 
 
-<%-- <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
-    pageEncoding="ISO-8859-1"%>
-<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
-<div class="body-area container">
-
-<H1>CART</H1>
-<div class="table-responsive">
-<div ng-app="myApp" ng-controller="myCtrl">
-<tr>
-
-<th>ProductImage</th>
-<th>ProductName</th>
-<th>Quantity</th>
-<th>Rate</th>
-
-
-<tr ng-repeat="c in myscope | filter:search |orderBy:orderkeyword : orderflag ">
-<td>
-<div class="col-md-2">
-<img src="resources/data/productImage-{{c.productId}}.jpg" width="100%">
-</div>
-</td>
-<td>{{c.productName}}</td>
-<td>{{c.quantity}}</td>
-
-<a href="removefromcart-{{c.cartItemId}}"><button class="btn btn-danger">Remove From Cart</button></a>
-<a href="checkoutfromcart-{{c.cartItemId}}"><button class="btn btn-danger">Checkout Now</button></a>
-</tr>
-</table>
-
-
-
-</div>
-</div>
-
-</div>
-
-<script>
-			var app = angular.module('myApp', []);
-			app.controller('myCtrl', function($scope) {
-			$scope.myScope=${cartItemsListJSON};
-			}); 
-			
-</script>
-
-
-
- --%>
