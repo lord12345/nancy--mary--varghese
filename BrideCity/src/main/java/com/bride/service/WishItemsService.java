@@ -22,16 +22,20 @@ public class WishItemsService
 	wishItemsDAOImpl.addToWish(wishItems);
 	}
 
+	
 	public String fetchAllItemsByUserIdJSON(int userId)
 	{
 		
 	return  wishItemsDAOImpl.fetchAllItemsByUserIdJSON(userId);
 	}
+	
+	
 	public WishItems fetchOneItem(int wishItemId)
 	{
 		
 	return   wishItemsDAOImpl.fetchOneItem(wishItemId);
 	}
+	
 	public void deleteItem(int wishItemId)
 	{
 

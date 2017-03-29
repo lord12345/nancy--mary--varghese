@@ -47,6 +47,8 @@ public class WishItems
 	@JoinColumn(name="userId", nullable=false , updatable=false , insertable=false )
 	private User user;
 
+	
+
 	public int getWishItemId() {
 		return wishItemId;
 	}

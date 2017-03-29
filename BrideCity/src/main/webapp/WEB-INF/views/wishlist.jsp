@@ -37,7 +37,7 @@
 <td>{{w.rate}}</td>
 <td>{{w.discount}}</td>
 <td>{{w.amount}}</td>
-<td><a href="removefromcart-{{w.wishItemId}}"><button class="button button1">Remove From Wish</button></a></td>
+<td><a href="removefromwish-{{w.wishItemId}}"><button class="button button1">Remove From Wish</button></a></td>
 
 </tr>
 </table>
